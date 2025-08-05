@@ -1,0 +1,8 @@
+{
+    "overrides": [
+      {
+        "files": "src/modules/**/*.html",
+        "options": { "parser": "lwc" }
+      }
+    ]
+  }
