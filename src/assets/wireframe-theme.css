@@ -1,0 +1,306 @@
+/*
+ * SLDS Wireframe Theme Override
+ * Low-fidelity black and white styling with thick borders
+ * Only overrides --slds-g-* global styling hooks from slds-plus.css
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  /* ===== COLOR PALETTE OVERRIDES ===== */
+  /* Convert all color palettes to grayscale */
+  
+  /* Blue palette -> grayscale */
+  --slds-g-color-palette-blue-10: #000000;
+  --slds-g-color-palette-blue-15: #1a1a1a;
+  --slds-g-color-palette-blue-20: #333333;
+  --slds-g-color-palette-blue-30: #4d4d4d;
+  --slds-g-color-palette-blue-40: #666666;
+  --slds-g-color-palette-blue-50: #808080;
+  --slds-g-color-palette-blue-60: #999999;
+  --slds-g-color-palette-blue-65: #a6a6a6;
+  --slds-g-color-palette-blue-70: #b3b3b3;
+  --slds-g-color-palette-blue-80: #cccccc;
+  --slds-g-color-palette-blue-90: #e6e6e6;
+  --slds-g-color-palette-blue-95: #f3f3f3;
+
+  /* Cloud blue palette -> grayscale */
+  --slds-g-color-palette-cloud-blue-10: #000000;
+  --slds-g-color-palette-cloud-blue-15: #1a1a1a;
+  --slds-g-color-palette-cloud-blue-20: #333333;
+  --slds-g-color-palette-cloud-blue-30: #4d4d4d;
+  --slds-g-color-palette-cloud-blue-40: #666666;
+  --slds-g-color-palette-cloud-blue-50: #808080;
+  --slds-g-color-palette-cloud-blue-60: #999999;
+  --slds-g-color-palette-cloud-blue-65: #a6a6a6;
+  --slds-g-color-palette-cloud-blue-70: #b3b3b3;
+  --slds-g-color-palette-cloud-blue-80: #cccccc;
+  --slds-g-color-palette-cloud-blue-90: #e6e6e6;
+  --slds-g-color-palette-cloud-blue-95: #f3f3f3;
+
+  /* Green palette -> grayscale */
+  --slds-g-color-palette-green-10: #000000;
+  --slds-g-color-palette-green-15: #1a1a1a;
+  --slds-g-color-palette-green-20: #333333;
+  --slds-g-color-palette-green-30: #4d4d4d;
+  --slds-g-color-palette-green-40: #666666;
+  --slds-g-color-palette-green-50: #808080;
+  --slds-g-color-palette-green-60: #999999;
+  --slds-g-color-palette-green-65: #a6a6a6;
+  --slds-g-color-palette-green-70: #b3b3b3;
+  --slds-g-color-palette-green-80: #cccccc;
+  --slds-g-color-palette-green-90: #e6e6e6;
+  --slds-g-color-palette-green-95: #f3f3f3;
+
+  /* Hot orange palette -> grayscale */
+  --slds-g-color-palette-hot-orange-10: #000000;
+  --slds-g-color-palette-hot-orange-15: #1a1a1a;
+  --slds-g-color-palette-hot-orange-20: #333333;
+  --slds-g-color-palette-hot-orange-30: #4d4d4d;
+  --slds-g-color-palette-hot-orange-40: #666666;
+  --slds-g-color-palette-hot-orange-50: #808080;
+  --slds-g-color-palette-hot-orange-60: #999999;
+  --slds-g-color-palette-hot-orange-65: #a6a6a6;
+  --slds-g-color-palette-hot-orange-70: #b3b3b3;
+  --slds-g-color-palette-hot-orange-80: #cccccc;
+  --slds-g-color-palette-hot-orange-90: #e6e6e6;
+  --slds-g-color-palette-hot-orange-95: #f3f3f3;
+
+  /* ===== SEMANTIC COLOR OVERRIDES ===== */
+  
+  /* Neutral base colors (already grayscale, keep as is) */
+  --slds-g-color-neutral-base-100: #ffffff;
+  --slds-g-color-neutral-base-95: #f3f3f3;
+  --slds-g-color-neutral-base-90: #e6e6e6;
+  --slds-g-color-neutral-base-80: #cccccc;
+  --slds-g-color-neutral-base-70: #b3b3b3;
+  --slds-g-color-neutral-base-65: #a6a6a6;
+  --slds-g-color-neutral-base-60: #999999;
+  --slds-g-color-neutral-base-50: #808080;
+  --slds-g-color-neutral-base-40: #666666;
+  --slds-g-color-neutral-base-30: #4d4d4d;
+  --slds-g-color-neutral-base-20: #333333;
+  --slds-g-color-neutral-base-15: #262626;
+  --slds-g-color-neutral-base-10: #1a1a1a;
+
+  /* Brand base colors -> grayscale */
+  --slds-g-color-brand-base-100: #ffffff;
+  --slds-g-color-brand-base-95: #f3f3f3;
+  --slds-g-color-brand-base-90: #e6e6e6;
+  --slds-g-color-brand-base-80: #cccccc;
+  --slds-g-color-brand-base-70: #b3b3b3;
+  --slds-g-color-brand-base-65: #a6a6a6;
+  --slds-g-color-brand-base-60: #999999;
+  --slds-g-color-brand-base-50: #808080;
+  --slds-g-color-brand-base-40: #666666;
+  --slds-g-color-brand-base-30: #4d4d4d;
+  --slds-g-color-brand-base-20: #333333;
+  --slds-g-color-brand-base-15: #262626;
+  --slds-g-color-brand-base-10: #1a1a1a;
+
+  /* Warning colors -> grayscale */
+  --slds-g-color-warning-base-100: #ffffff;
+  --slds-g-color-warning-base-90: #e6e6e6;
+  --slds-g-color-warning-base-80: #cccccc;
+  --slds-g-color-warning-base-70: #b3b3b3;
+  --slds-g-color-warning-base-60: #999999;
+  --slds-g-color-warning-base-50: #808080;
+  --slds-g-color-warning-base-40: #666666;
+  --slds-g-color-warning-base-30: #4d4d4d;
+  --slds-g-color-warning-base-20: #333333;
+  --slds-g-color-warning-base-10: #1a1a1a;
+
+  /* Success colors -> grayscale */
+  --slds-g-color-success-base-100: #ffffff;
+  --slds-g-color-success-base-90: #e6e6e6;
+  --slds-g-color-success-base-80: #cccccc;
+  --slds-g-color-success-base-70: #b3b3b3;
+  --slds-g-color-success-base-60: #999999;
+  --slds-g-color-success-base-50: #808080;
+  --slds-g-color-success-base-40: #666666;
+  --slds-g-color-success-base-30: #4d4d4d;
+  --slds-g-color-success-base-20: #333333;
+  --slds-g-color-success-base-10: #1a1a1a;
+
+  /* ===== FUNCTIONAL COLOR OVERRIDES ===== */
+  
+  /* Borders - make them thick and black for wireframe look */
+  --slds-g-color-border-1: #000000;
+  --slds-g-color-border-2: #000000;
+  --slds-g-color-border-accent-1: #000000;
+  --slds-g-color-border-accent-2: #000000;
+
+  /* Surfaces - white and light grays */
+  --slds-g-color-surface-1: #ffffff;
+  --slds-g-color-surface-2: #f8f8f8;
+  --slds-g-color-surface-3: #f0f0f0;
+
+  /* Accents - black and dark grays for high contrast */
+  --slds-g-color-accent-1: #000000;
+  --slds-g-color-accent-2: #333333;
+  --slds-g-color-accent-3: #666666;
+
+  /* ===== BORDER SIZING OVERRIDES ===== */
+  /* Make borders thicker for wireframe aesthetic */
+  --slds-g-sizing-border-1: 2px;
+  --slds-g-sizing-border-2: 3px;
+  --slds-g-sizing-border-3: 4px;
+  --slds-g-sizing-border-4: 5px;
+
+  /* ===== SHADOW OVERRIDES ===== */
+  /* Remove or simplify shadows for wireframe look */
+  --slds-g-shadow-1: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --slds-g-shadow-2: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --slds-g-shadow-3: 0 6px 12px rgba(0, 0, 0, 0.2);
+  --slds-g-shadow-4: 0 8px 16px rgba(0, 0, 0, 0.25);
+  --slds-g-shadow-5: 0 10px 20px rgba(0, 0, 0, 0.3);
+  --slds-g-shadow-6: 0 12px 24px rgba(0, 0, 0, 0.35);
+  --slds-g-shadow-inverse-1: 0 0 6px rgba(0, 0, 0, 0.3);
+
+  /* ===== RADIUS OVERRIDES ===== */
+  /* Reduce border radius for more geometric wireframe look */
+  --slds-g-radius-border-1: 0.125rem;
+  --slds-g-radius-border-2: 0.25rem;
+  --slds-g-radius-border-3: 0.375rem;
+  --slds-g-radius-border-4: 0.5rem;
+  --slds-g-radius-border-pill: 1rem;
+  /* Keep circle radius as is for true circular elements */
+
+  /* ===== SURFACE CONTAINER COLORS ===== */
+  /* Containers that sit on top of surfaces */
+  --slds-g-color-surface-container-1: #ffffff;
+  --slds-g-color-surface-container-2: #f8f8f8;
+  --slds-g-color-surface-container-3: #f0f0f0;
+  --slds-g-color-surface-container-inverse-1: #1a1a1a;
+  --slds-g-color-surface-container-inverse-2: #000000;
+
+  /* ===== ON-SURFACE COLORS ===== */
+  /* Text/icons placed on surface or container */
+  --slds-g-color-on-surface-1: #666666;
+  --slds-g-color-on-surface-2: #333333;
+  --slds-g-color-on-surface-3: #000000;
+  --slds-g-color-on-surface-inverse-1: #ffffff;
+  --slds-g-color-on-surface-inverse-2: #cccccc;
+
+  /* ===== ACCENT CONTAINER COLORS ===== */
+  /* Background containers for accent elements */
+  --slds-g-color-accent-container-1: #000000;
+  --slds-g-color-accent-container-2: #333333;
+  --slds-g-color-accent-container-3: #666666;
+
+  /* ===== ON-ACCENT COLORS ===== */
+  /* Text/icons on accent containers */
+  --slds-g-color-on-accent-1: #ffffff;
+  --slds-g-color-on-accent-2: #ffffff;
+  --slds-g-color-on-accent-3: #ffffff;
+
+  /* ===== ADDITIONAL BORDER ACCENT COLORS ===== */
+  --slds-g-color-border-accent-3: #000000;
+
+  /* ===== FEEDBACK COLORS: ERROR ===== */
+  --slds-g-color-error-1: #333333;
+  --slds-g-color-error-container-1: #f0f0f0;
+  --slds-g-color-error-container-2: #e6e6e6;
+  --slds-g-color-on-error-1: #000000;
+  --slds-g-color-border-error-1: #666666;
+  --slds-g-color-border-error-2: #333333;
+
+  /* ===== FEEDBACK COLORS: SUCCESS ===== */
+  --slds-g-color-success-1: #333333;
+  --slds-g-color-success-container-1: #f0f0f0;
+  --slds-g-color-success-container-2: #e6e6e6;
+  --slds-g-color-on-success-1: #000000;
+  --slds-g-color-on-success-2: #333333;
+  --slds-g-color-border-success-1: #666666;
+
+  /* ===== FEEDBACK COLORS: WARNING ===== */
+  --slds-g-color-warning-1: #333333;
+  --slds-g-color-warning-container-1: #f0f0f0;
+  --slds-g-color-on-warning-1: #000000;
+  --slds-g-color-border-warning-1: #666666;
+
+  /* ===== FEEDBACK COLORS: INFO ===== */
+  --slds-g-color-info-1: #333333;
+  --slds-g-color-info-container-1: #f0f0f0;
+  --slds-g-color-on-info-1: #000000;
+
+  /* ===== FEEDBACK COLORS: DISABLED ===== */
+  --slds-g-color-disabled-1: #999999;
+  --slds-g-color-disabled-2: #cccccc;
+  --slds-g-color-disabled-container-1: #f8f8f8;
+  --slds-g-color-disabled-container-2: #f0f0f0;
+  --slds-g-color-on-disabled-1: #666666;
+  --slds-g-color-on-disabled-2: #999999;
+  --slds-g-color-border-disabled-1: #cccccc;
+  --slds-g-color-border-disabled-2: #999999;
+
+  /* ===== INVERSE SURFACE COLORS ===== */
+  --slds-g-color-surface-inverse-1: #1a1a1a;
+  --slds-g-color-surface-inverse-2: #000000;
+
+  /* ===== FONT FAMILY OVERRIDE ===== */
+  /* Use Andika font for all base text */
+  --slds-g-font-family-base: "Andika", system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+/* ===== COMPONENT-SPECIFIC OVERRIDES ===== */
+/* Note: These are not global styling hooks but commonly visible component tokens */
+:root {
+  /* Icon background - medium grey as requested */
+  /* Both slds and sds prefixes to cover all cases */
+  --slds-c-icon-color-background: #808080 !important;
+  --slds-c-icon-color-background-hover: #666666 !important;
+  --slds-c-icon-color-background-active: #333333 !important;
+  --sds-c-icon-color-background: #808080 !important;
+  --sds-c-icon-color-background-hover: #666666 !important; 
+  --sds-c-icon-color-background-active: #333333 !important;
+}
+
+/* Additional specificity for Lightning icons in shadow DOM */
+lightning-icon {
+  --sds-c-icon-color-background: #808080 !important;
+  --slds-c-icon-color-background: #808080 !important;
+}
+
+/* Even more specific targeting for the span with inline styles */
+lightning-icon span[style*="--sds-c-icon-color-background"] {
+  --sds-c-icon-color-background: #808080 !important;
+}
+
+/* Additional wireframe-specific styles */
+/* Add thick borders to common elements */
+* {
+  /* Apply thick black borders to all elements for wireframe look */
+  box-shadow: none !important; /* Remove existing shadows */
+}
+
+/* Override any component-specific colors that might use non-global tokens */
+[class*="slds-"] {
+  /* Ensure text is always black for readability */
+  color: #000000 !important;
+}
+
+/* Make sure backgrounds are always white or light gray */
+[class*="slds-card"],
+[class*="slds-modal"],
+[class*="slds-panel"],
+[class*="slds-popover"] {
+  background-color: var(--slds-g-color-surface-1) !important;
+  border: var(--slds-g-sizing-border-2) solid var(--slds-g-color-border-1) !important;
+}
+
+/* Ensure buttons have thick borders */
+[class*="slds-button"] {
+  border: var(--slds-g-sizing-border-2) solid var(--slds-g-color-border-1) !important;
+  background-color: var(--slds-g-color-surface-1) !important;
+  color: #000000 !important;
+}
+
+/* Input fields with thick borders */
+[class*="slds-input"],
+[class*="slds-textarea"],
+[class*="slds-select"] {
+  border: var(--slds-g-sizing-border-2) solid var(--slds-g-color-border-1) !important;
+  background-color: var(--slds-g-color-surface-1) !important;
+  color: #000000 !important;
+}
