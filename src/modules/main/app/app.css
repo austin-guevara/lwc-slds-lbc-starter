@@ -1,8 +1,5 @@
 main {
     margin: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 h1 {
@@ -11,4 +8,8 @@ h1 {
 
 lightning-card {
     max-width: 400px;
+}
+
+img.recipes-logo {
+    mix-blend-mode: multiply;
 }

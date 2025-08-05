@@ -1,55 +1,234 @@
 <template>
-  <main>
-    <img src="/public/assets/recipes-logo.png" alt="logo" />
-    <h1>Hello World!</h1>
-
-    <lightning-card title="Welcome Card" icon-name="standard:account" class="slds-m-around_large">
-      <p class="slds-p-horizontal_small">
-        This is a simple Lightning card component with an icon and body text. 
-        Lightning cards provide a structured way to display related information 
-        and actions in a consistent, accessible format.
+  <main class="slds-grid slds-grid_vertical slds-grid_vertical-align-center">
+    
+    <!-- Header Section - Centered Content -->
+    <header class="slds-text-align_center slds-m-bottom_xx-large slds-size_xx-large">
+      <img
+        src="/public/assets/recipes-logo.png"
+        alt="logo"
+        class="recipes-logo"
+      />
+      <h1 class="slds-text-heading_large slds-m-bottom_small">
+        Lightning Web Components Demo
+      </h1>
+      <p class="slds-text-body_regular">
+        This page demonstrates various Lightning Base Components styled with the
+        wireframe SLDS2 theme.
       </p>
-    </lightning-card>
+    </header>
 
-    <lightning-breadcrumbs>
-      <lightning-breadcrumb
-          label="Parent Account"
-          href="path/to/place/1"
-          onclick={handleNavigateToCustomPage1}
-      >
-      </lightning-breadcrumb>
-      <lightning-breadcrumb
-          label="Case"
-          href="path/to/place/2"
-          onclick={handleNavigateToCustomPage2}
-      >
-      </lightning-breadcrumb>
-    </lightning-breadcrumbs>
+    <!-- Component Sections Container - Left Aligned -->
+    <div class="slds-grid slds-grid_vertical slds-size_xx-large">
 
-    <div class="slds-m-top_small slds-m-bottom_medium">
+      <!-- Accordion Group -->
+      <section class="slds-grid slds-grid_vertical slds-m-bottom_xx-large">
+        <h2 class="slds-text-heading_medium slds-m-bottom_small">
+          Accordion Group
+        </h2>
+        <p class="slds-text-body_regular slds-m-bottom_medium">
+          Accordions allow users to show and hide sections of related content on a
+          page.
+        </p>
 
-      <!-- Base variant: Makes a button look like a link -->
-      <lightning-button variant="base" label="Base" title="Looks like a link" class="slds-m-left_x-small"></lightning-button>
+        <main-accordion-group></main-accordion-group>
+      </section>
 
-      <!-- Neutral variant (default) -->
-      <lightning-button label="Neutral" title="Non-primary action" class="slds-m-left_x-small"></lightning-button>
+      <!-- Badges -->
+      <section class="slds-grid slds-grid_vertical slds-m-bottom_xx-large">
+        <h2 class="slds-text-heading_medium slds-m-bottom_small">Badges</h2>
+        <p class="slds-text-body_regular slds-m-bottom_medium">
+          Badges are used to highlight important information or statuses.
+        </p>
 
-      <!-- Brand variant: Identifies the primary action in a group of buttons -->
-      <lightning-button variant="brand" label="Brand" title="Primary action" class="slds-m-left_x-small"></lightning-button>
+        <div class="slds-show">
+          <lightning-badge label="Alpha" icon-name="utility:event" class="slds-badge_lightest"></lightning-badge>
+          <lightning-badge label="Beta" icon-name="utility:email" icon-position="end" class="slds-badge_lightest"></lightning-badge>
+          <lightning-badge label="Gamma" icon-name="utility:favorite" class="slds-badge_lightest"></lightning-badge>
+        </div>
+      </section>
+      
 
-      <!-- Brand outline variant: Identifies the primary action in a group of buttons, but has a lighter look -->
-      <lightning-button variant="brand-outline" label="Brand Outline" title="Primary action with lighter look" class="slds-m-left_x-small"></lightning-button>
+      <!-- Breadcrumbs -->
+      <section class="slds-grid slds-grid_vertical slds-m-bottom_xx-large">
+        <h2 class="slds-text-heading_medium slds-m-bottom_small">Breadcrumbs</h2>
+        <p class="slds-text-body_regular slds-m-bottom_medium">
+          Breadcrumbs help users understand their current location within the
+          application hierarchy.
+        </p>
 
-      <!-- Destructive variant: Identifies a potentially negative action -->
-      <lightning-button variant="destructive" label="Destructive" title="Destructive action" class="slds-m-left_x-small"></lightning-button>
+        <lightning-breadcrumbs>
+          <lightning-breadcrumb
+            label="Parent Account"
+            href="path/to/place/1"
+            onclick={handleNavigateToCustomPage1}
+          >
+          </lightning-breadcrumb>
+          <lightning-breadcrumb
+            label="Case"
+            href="path/to/place/2"
+            onclick={handleNavigateToCustomPage2}
+          >
+          </lightning-breadcrumb>
+        </lightning-breadcrumbs>
+      </section>
 
-      <!-- Destructive text variant: Identifies a potentially negative action, but has a lighter look -->
-      <lightning-button variant="destructive-text" label="Destructive Text" title="Destructive action with a lighter look" class="slds-m-left_x-small"></lightning-button>
+      <!-- Buttons -->
+      <section class="slds-grid slds-grid_vertical slds-m-bottom_xx-large">
+        <h2 class="slds-text-heading_medium slds-m-bottom_small">
+          Button Variants
+        </h2>
+        <p class="slds-text-body_regular slds-m-bottom_medium">
+          Different button variants communicate various action types and
+          importance levels to users.
+        </p>
 
-      <!-- Success variant: Identifies a successful action -->
-      <lightning-button variant="success" label="Success" title="Successful action" class="slds-m-left_x-small"></lightning-button>
+        <div class="slds-button-group" role="group">
+          <lightning-button
+            variant="base"
+            label="Base"
+            title="Looks like a link"
+          ></lightning-button>
+          <lightning-button
+            label="Neutral"
+            title="Non-primary action"
+            class="slds-m-left_x-small"
+          ></lightning-button>
+          <lightning-button
+            variant="brand"
+            label="Brand"
+            title="Primary action"
+            class="slds-m-left_x-small"
+          ></lightning-button>
+          <lightning-button
+            variant="brand-outline"
+            label="Brand Outline"
+            title="Primary action with lighter look"
+            class="slds-m-left_x-small"
+          ></lightning-button>
+          <lightning-button
+            variant="destructive"
+            label="Destructive"
+            title="Destructive action"
+            class="slds-m-left_x-small"
+          ></lightning-button>
+          <lightning-button
+            variant="destructive-text"
+            label="Destructive Text"
+            title="Destructive action with a lighter look"
+            class="slds-m-left_x-small"
+          ></lightning-button>
+          <lightning-button
+            variant="success"
+            label="Success"
+            title="Successful action"
+            class="slds-m-left_x-small"
+          ></lightning-button>
+        </div>
+      </section>
+
+      <!-- Button Group -->
+      <section class="slds-grid slds-grid_vertical slds-m-bottom_xx-large">
+        <h2 class="slds-text-heading_medium slds-m-bottom_small">Button Group</h2>
+        <p class="slds-text-body_regular slds-m-bottom_medium">
+          Button groups allow users to group related actions together.
+        </p>
+
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+          <p class="slds-m-bottom_medium">
+              Button group using simple buttons.
+          </p>
+  
+          <!-- Button group: simple buttons -->
+          <lightning-button-group>
+              <lightning-button label="Refresh"></lightning-button>
+              <lightning-button label="Edit"></lightning-button>
+              <lightning-button label="Save"></lightning-button>
+          </lightning-button-group>
+      </div>
+  
+      <div class="slds-m-top_medium slds-m-bottom_x-large">
+          <p class="slds-m-bottom_medium">
+              Button group using several button variations.
+          </p>
+  
+          <!-- Button group: simple buttons -->
+          <lightning-button-group>
+              <lightning-button label="Refresh"></lightning-button>
+              <lightning-button label="Edit"></lightning-button>
+              <lightning-button label="Save" icon-name="utility:save"></lightning-button>
+              <lightning-button label="Delete" variant="destructive" icon-name="utility:delete"></lightning-button>
+          </lightning-button-group>
+      </div>
+  
+      <div class="slds-m-top_medium slds-m-bottom_x-large">
+          <p class="slds-m-bottom_medium">
+              Button group using several button types (standard, icon, stateful, icon-stateful, menu).
+          </p>
+  
+          <!-- Button group: simple buttons -->
+          <lightning-button-group>
+              <lightning-button label="Refresh"></lightning-button>
+              <lightning-button label="Edit"></lightning-button>
+              <lightning-button label="Save" icon-name="utility:save"></lightning-button>
+              <lightning-button-icon icon-name="utility:delete" variant="border-filled" alternative-text="Delete"></lightning-button-icon>
+              <lightning-button-icon icon-name="utility:settings" variant="border-filled" alternative-text="Settings"></lightning-button-icon>
+              <lightning-button-stateful
+                  selected={buttonStatefulState}
+                  label-when-off="Follow"
+                  label-when-on="Following"
+                  label-when-hover="Unfollow"
+                  icon-name-when-off="utility:add"
+                  icon-name-when-on="utility:check"
+                  icon-name-when-hover="utility:close"
+                  onclick={handleButtonStatefulClick}
+              ></lightning-button-stateful>
+              <lightning-button-icon-stateful
+                  icon-name="utility:like"
+                  selected={buttonIconStatefulState}
+                  alternative-text="Like"
+                  onclick={handleButtonIconStatefulClick}>
+              </lightning-button-icon-stateful>
+              <lightning-button-menu alternative-text="Show menu">
+                  <lightning-menu-item label="Menu Item One" value="item1"></lightning-menu-item>
+                  <lightning-menu-item label="Menu Item Two" value="item2"></lightning-menu-item>
+                  <lightning-menu-item label="Menu Item Three" value="item3"></lightning-menu-item>
+              </lightning-button-menu>
+          </lightning-button-group>
+      </div>
+      </section>
+      
+      <!-- Card -->
+      <section class="slds-grid slds-grid_vertical slds-m-bottom_xx-large">
+        <h2 class="slds-text-heading_medium slds-m-bottom_small">Card</h2>
+        <p class="slds-text-body_regular slds-m-bottom_medium">
+          Cards provide a structured way to display related information and
+          actions in a consistent, accessible format.
+        </p>
+
+        <lightning-card
+          title="Welcome Card"
+          icon-name="standard:account"
+          class="slds-m-bottom_medium"
+        >
+          <p class="slds-p-horizontal_small slds-show_inline-block">
+            This is a simple Lightning card component with an icon and body text.
+            Lightning cards are perfect for organizing content into digestible
+            sections.
+          </p>
+        </lightning-card>
+      </section>
+
+      <!-- Data Table -->
+      <section class="slds-grid slds-grid_vertical slds-m-bottom_xx-large">
+        <h2 class="slds-text-heading_medium slds-m-bottom_small">Data Table</h2>
+        <p class="slds-text-body_regular slds-m-bottom_medium">
+          Data tables present structured information in rows and columns for easy
+          scanning and comparison.
+        </p>
+
+        <main-data-table></main-data-table>
+      </section>
+
     </div>
-
-    <main-accordion-group></main-accordion-group>
   </main>
 </template>
