@@ -8,3 +8,7 @@ main {
 h1 {
     color: #1798c1;
 }
+
+lightning-card {
+    max-width: 400px;
+}
