@@ -11,5 +11,5 @@ lightning-card {
 }
 
 img.recipes-logo {
-    mix-blend-mode: multiply;
+    border-radius: var(--slds-g-radius-border-4);
 }
