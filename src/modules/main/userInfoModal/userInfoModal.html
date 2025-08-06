@@ -1,0 +1,55 @@
+<template>
+    <lightning-modal-header label="User Information">
+        Please fill out your information below
+    </lightning-modal-header>
+    
+    <lightning-modal-body>
+        <div class="slds-p-around_medium">
+            <div class="slds-form-element slds-m-bottom_medium">
+                <lightning-input
+                    label="Name"
+                    type="text"
+                    value={userName}
+                    onchange={handleNameChange}
+                    required
+                    placeholder="Enter your name">
+                </lightning-input>
+            </div>
+            
+            <div class="slds-form-element slds-m-bottom_medium">
+                <lightning-input
+                    label="Date"
+                    type="date"
+                    value={userDate}
+                    onchange={handleDateChange}
+                    required>
+                </lightning-input>
+            </div>
+            
+            <div class="slds-form-element slds-m-bottom_medium">
+                <lightning-combobox
+                    label="Region"
+                    value={selectedRegion}
+                    options={regionOptions}
+                    onchange={handleRegionChange}
+                    required
+                    placeholder="Select your region">
+                </lightning-combobox>
+            </div>
+        </div>
+    </lightning-modal-body>
+    
+    <lightning-modal-footer>
+        <lightning-button
+            variant="neutral"
+            label="Cancel"
+            onclick={handleCancel}>
+        </lightning-button>
+        <lightning-button
+            variant="brand"
+            label="Save"
+            onclick={handleSave}
+            class="slds-m-left_x-small">
+        </lightning-button>
+    </lightning-modal-footer>
+</template>
