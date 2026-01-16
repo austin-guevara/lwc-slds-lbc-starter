@@ -14,78 +14,10 @@
           label="View Details" 
           variant="brand"
           onclick={handleOpenModal}
+          aria-haspopup="dialog"
           title="View contact details">
         </lightning-button>
       </div>
     </div>
   </lightning-card>
-
-  <!-- Modal -->
-  <template if:true={isModalOpen}>
-    <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading" class="slds-modal slds-fade-in-open">
-      <div class="slds-modal__container">
-        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={handleCloseModal}>
-          <lightning-icon icon-name="utility:close" alternative-text="Close" size="small" variant="inverse"></lightning-icon>
-          <span class="slds-assistive-text">Close</span>
-        </button>
-        
-        <div class="slds-modal__header">
-          <h2 id="modal-heading" class="slds-modal__title slds-hyphenate">Contact Details</h2>
-        </div>
-        
-        <div class="slds-modal__content slds-p-around_medium">
-          <div class="contact-details">
-            <div class="detail-item">
-              <lightning-icon icon-name="utility:user" size="x-small" class="detail-icon"></lightning-icon>
-              <div class="detail-content">
-                <p class="detail-label">Name</p>
-                <p class="detail-value">{contactName}</p>
-              </div>
-            </div>
-            
-            <div class="detail-item">
-              <lightning-icon icon-name="utility:email" size="x-small" class="detail-icon"></lightning-icon>
-              <div class="detail-content">
-                <p class="detail-label">Email</p>
-                <p class="detail-value">{contactEmail}</p>
-              </div>
-            </div>
-            
-            <div class="detail-item">
-              <lightning-icon icon-name="utility:phone_portrait" size="x-small" class="detail-icon"></lightning-icon>
-              <div class="detail-content">
-                <p class="detail-label">Phone</p>
-                <p class="detail-value">{contactPhone}</p>
-              </div>
-            </div>
-            
-            <div class="detail-item">
-              <lightning-icon icon-name="utility:location" size="x-small" class="detail-icon"></lightning-icon>
-              <div class="detail-content">
-                <p class="detail-label">Address</p>
-                <p class="detail-value">{contactAddress}</p>
-              </div>
-            </div>
-            
-            <div class="detail-item">
-              <lightning-icon icon-name="utility:work" size="x-small" class="detail-icon"></lightning-icon>
-              <div class="detail-content">
-                <p class="detail-label">Company</p>
-                <p class="detail-value">{contactCompany}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="slds-modal__footer">
-          <lightning-button 
-            label="Close" 
-            variant="neutral"
-            onclick={handleCloseModal}>
-          </lightning-button>
-        </div>
-      </div>
-    </section>
-    <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
-  </template>
 </template>

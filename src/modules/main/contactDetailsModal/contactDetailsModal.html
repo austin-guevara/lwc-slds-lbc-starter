@@ -1,0 +1,55 @@
+<template>
+  <lightning-modal-header label="Contact Details"></lightning-modal-header>
+  
+  <lightning-modal-body>
+    <div class="contact-details">
+      <div class="detail-item">
+        <lightning-icon icon-name="utility:user" size="x-small" class="detail-icon"></lightning-icon>
+        <div class="detail-content">
+          <p class="detail-label">Name</p>
+          <p class="detail-value">{contact.name}</p>
+        </div>
+      </div>
+      
+      <div class="detail-item">
+        <lightning-icon icon-name="utility:email" size="x-small" class="detail-icon"></lightning-icon>
+        <div class="detail-content">
+          <p class="detail-label">Email</p>
+          <p class="detail-value">{contact.email}</p>
+        </div>
+      </div>
+      
+      <div class="detail-item">
+        <lightning-icon icon-name="utility:phone_portrait" size="x-small" class="detail-icon"></lightning-icon>
+        <div class="detail-content">
+          <p class="detail-label">Phone</p>
+          <p class="detail-value">{contact.phone}</p>
+        </div>
+      </div>
+      
+      <div class="detail-item">
+        <lightning-icon icon-name="utility:location" size="x-small" class="detail-icon"></lightning-icon>
+        <div class="detail-content">
+          <p class="detail-label">Address</p>
+          <p class="detail-value">{contact.address}</p>
+        </div>
+      </div>
+      
+      <div class="detail-item">
+        <lightning-icon icon-name="utility:work" size="x-small" class="detail-icon"></lightning-icon>
+        <div class="detail-content">
+          <p class="detail-label">Company</p>
+          <p class="detail-value">{contact.company}</p>
+        </div>
+      </div>
+    </div>
+  </lightning-modal-body>
+  
+  <lightning-modal-footer>
+    <lightning-button 
+      label="Close" 
+      variant="neutral"
+      onclick={handleClose}>
+    </lightning-button>
+  </lightning-modal-footer>
+</template>
