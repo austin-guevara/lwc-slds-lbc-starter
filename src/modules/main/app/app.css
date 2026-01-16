@@ -6,5 +6,19 @@ main {
 }
 
 h1 {
-    color: #1798c1;
+    color: var(--slds-g-color-accent-1);
+    margin-bottom: var(--slds-g-spacing-6);
+}
+
+h2 {
+    color: var(--slds-g-color-on-surface-2);
+    font-size: var(--slds-g-font-scale-4);
+    font-weight: var(--slds-g-font-weight-6);
+    margin-bottom: var(--slds-g-spacing-4);
+}
+
+.component-section {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: var(--slds-g-spacing-8);
 }
