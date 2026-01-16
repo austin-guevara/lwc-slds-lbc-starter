@@ -1,0 +1,20 @@
+# Foundational Principles for Salesforce UI Development
+
+Whenever developing Salesforce experiences—especially using LWC and SLDS—follow these foundational guidelines to ensure scalable, maintainable, and consistent UI code:
+
+## Making Customizations: Decision Hierarchy
+
+When writing UI code, always prioritize the following order for styling and layout decisions:
+
+1. **Lightning Base Component/Variant**
+   - Before writing any HTML, CSS, or JavaScript, determine if an existing Lightning Base Component (e.g., `lightning-button`, `lightning-card`) can achieve the desired appearance or behavior. 
+   - Use a base component's out-of-the-box configuration options before adding any classes or writing custom CSS.
+
+2. **Utility Class**
+   - If the base component alone is insufficient, check if an SLDS utility class is available. Utility classes are especially important for composing "molecular" components—those made up of several smaller components that form part of a page or an entire page.
+
+3. **Custom CSS with Styling Hooks**
+   - If neither a base component nor a utility class suffices, use the correct global styling hook (e.g., `--slds-g-color-surface-1`, `--slds-g-color-accent-1`) and assign it to the CSS property with a CSS variable.
+   - Always use styling hooks in the correct semantic manner (never use a styling hook for an unintended purpose, such as `width: var(--slds-g-radius-border-circle)`).
+
+> **Avoid all hard-coded values** unless there is no utility class or styling hook available (e.g., `height: 100%` since no such utility class or styling hook exists).
