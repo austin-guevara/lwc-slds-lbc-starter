@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "SalesforceDX": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [ "-y", "@salesforce/mcp@latest", 
+                "--orgs", "ALLOW_ALL_ORGS",
+                "--toolsets", "code-analysis,lwc-experts",
+                "--tools", "guide_design_general,guide_figma_to_lwc_conversion",
+                "--allow-non-ga-tools"]
+    }
+  }
+}
