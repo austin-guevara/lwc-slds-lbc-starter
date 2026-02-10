@@ -20,6 +20,14 @@
     "lwc": "latest",
     "lwr": "0.18.1"
   },
+  "overrides": {
+    "@lwc/compiler": "8.20.1",
+    "@lwc/babel-plugin-component": "8.20.1"
+  },
+  "resolutions": {
+    "@lwc/compiler": "8.20.1",
+    "@lwc/babel-plugin-component": "8.20.1"
+  },
   "engines": {
     "node": ">=18.0.0"
   },
