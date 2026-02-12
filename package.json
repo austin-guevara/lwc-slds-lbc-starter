@@ -17,7 +17,7 @@
   "dependencies": {
     "@salesforce-ux/design-system": "^2.26.2",
     "lightning-base-components": "^1.28.13-alpha",
-    "lwc": "latest",
+    "lwc": "8.20.1",
     "lwr": "0.18.1"
   },
   "overrides": {
