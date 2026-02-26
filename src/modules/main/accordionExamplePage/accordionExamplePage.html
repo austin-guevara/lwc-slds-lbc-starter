@@ -1,0 +1,23 @@
+<template>
+    <div class="slds-p-around_large">
+        <lightning-card>
+            <div class="slds-p-around_medium">
+                <div class="slds-m-bottom_medium">
+                    <lightning-button 
+                        label="Back to Home" 
+                        icon-name="utility:back" 
+                        onclick={handleNavigateHome}
+                        class="slds-m-bottom_medium">
+                    </lightning-button>
+                </div>
+                
+                <h1 class="slds-text-heading_large slds-m-bottom_medium">Accordion Example</h1>
+                <p class="slds-text-body_regular slds-m-bottom_large">
+                    This page demonstrates the Lightning Accordion component with multiple expandable sections.
+                </p>
+                
+                <main-accordion-group></main-accordion-group>
+            </div>
+        </lightning-card>
+    </div>
+</template>

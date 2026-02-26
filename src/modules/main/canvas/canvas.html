@@ -1,10 +1,9 @@
 <template>
-    <div class="slds-p-around_large">
-        <div class="slds-text-align_center slds-m-bottom_large">
-            <img src="/public/assets/recipes-logo.png" alt="Recipes Logo" class="slds-m-bottom_medium" />
-            <h1 class="slds-text-heading_large">Hello World!</h1>
-        </div>
+    <template if:true={isHomePage}>
+        <main-home-page onnavigate={handleNavigate}></main-home-page>
+    </template>
 
-        <main-accordion-group></main-accordion-group>
-    </div>
+    <template if:true={isAccordionPage}>
+        <main-accordion-example-page onnavigate={handleNavigate}></main-accordion-example-page>
+    </template>
 </template>

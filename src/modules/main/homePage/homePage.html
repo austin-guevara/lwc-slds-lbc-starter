@@ -1,0 +1,29 @@
+<template>
+    <div class="slds-p-around_large">
+        <lightning-card>
+            <div class="slds-p-around_large slds-text-align_center">
+                <img src="/public/assets/recipes-logo.png" alt="Recipes Logo" class="slds-m-bottom_medium" />
+                <h1 class="slds-text-heading_large">Welcome to the Salesforce UI Starter Kit</h1>
+                <p class="slds-text-body_regular slds-m-top_medium">
+                    A comprehensive starter kit for building Salesforce Lightning Web Components with SLDS.
+                </p>
+            </div>
+        </lightning-card>
+
+        <lightning-card title="Example Pages" class="slds-m-top_large">
+            <div class="slds-p-around_medium">
+                <p class="slds-text-body_regular slds-m-bottom_medium">
+                    Explore these example pages to see various Lightning Design System components in action:
+                </p>
+                
+                <ul class="slds-list_dotted">
+                    <li class="slds-m-bottom_small">
+                        <a href="#" onclick={handleNavigateToAccordion} class="slds-text-link">
+                            <strong>Accordion Example</strong> - Interactive accordion component with multiple sections
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </lightning-card>
+    </div>
+</template>

@@ -3,6 +3,7 @@ import { LightningElement, track } from 'lwc';
 export default class HelloWorldApp extends LightningElement {
     @track selectedPanel = 'agentforce_panel';
     @track isPanelOpen = false;
+    @track currentPage = 'home';
 
     handlePanelSelect(event) {
         this.selectedPanel = event.detail.name;
@@ -11,6 +12,10 @@ export default class HelloWorldApp extends LightningElement {
 
     handlePanelClose() {
         this.isPanelOpen = false;
+    }
+
+    handleNavigate(event) {
+        this.currentPage = event.detail.page;
     }
 
     get panelClasses() {
