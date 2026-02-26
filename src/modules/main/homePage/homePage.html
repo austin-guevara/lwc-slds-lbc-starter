@@ -17,10 +17,23 @@
                 </p>
 
                 <ul class="slds-list_dotted">
-                    <li class="slds-m-bottom_small">
+                    <li class="slds-m-bottom_medium">
                         <a href="#" onclick={handleNavigateToCustomers} class="slds-text-link">
                             <strong>Customers Table</strong> - Interactive data table with sorting, filtering, and detail view
                         </a>
+
+                        <lightning-card title="Prompt used to build this page" icon-name="utility:prompt" class="slds-m-top_small">
+                            <div class="slds-p-around_small">
+                                <div class="slds-box slds-box_x-small slds-theme_shade">
+                                    <p class="slds-text-body_small">
+                                        "Make another page called Customers Table that has a table of customers and above the table it has a card that shows the customer information. So that when a user clicks a row in the table it shows the details above.
+                                    </p>
+                                    <p class="slds-text-body_small slds-m-top_small">
+                                        Add all the usual filters and sorting, and actions to the table"
+                                    </p>
+                                </div>
+                            </div>
+                        </lightning-card>
                     </li>
                     <li class="slds-m-bottom_small">
                         <a href="#" onclick={handleNavigateToAccordion} class="slds-text-link">
