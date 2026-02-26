@@ -1,0 +1,46 @@
+<template>
+    <div class="slds-context-bar">
+        <div class="slds-context-bar__primary">
+            <div
+                class="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger_click slds-no-hover">
+                <div class="slds-context-bar__icon-action slds-p-left_none">
+                    <lightning-button-menu icon-name="utility:apps" title="Open Menu" variant="bare" icon-size="medium">
+                        <lightning-menu-item label="Menu Item One" value="item1"></lightning-menu-item>
+                    </lightning-button-menu>
+                </div>
+                <span class="slds-context-bar__label-action slds-context-bar__app-name">
+                    <span class="slds-truncate" title="Home">Home</span>
+                </span>
+            </div>
+        </div>
+        <nav class="slds-context-bar__secondary" role="navigation">
+            <ul class="slds-grid slds-container_fluid">
+                <li class="slds-context-bar__item slds-is-active">
+                    <a href="#" class="slds-context-bar__label-action" title="Home">
+                        <span class="slds-assistive-text">Current Page:</span>
+                        <span class="slds-truncate" title="Home">Home</span>
+                    </a>
+                </li>
+                <li class="slds-context-bar__item">
+                    <a href="#" class="slds-context-bar__label-action" title="Home">
+                        <span class="slds-truncate" title="Record Home">Record Home</span>
+                    </a>
+                </li>
+                <li class="slds-context-bar__item">
+                    <a href="#" class="slds-context-bar__label-action" title="Home">
+                        <span class="slds-truncate" title="Object Home">Object Home</span>
+                    </a>
+                </li>
+                <li class="slds-context-bar__item">
+                    <a href="#" class="slds-context-bar__label-action" title="Home">
+                        <span class="slds-truncate" title="Custom Page">Custom Page</span>
+                    </a>
+                </li>
+                <li class="slds-context-bar__item slds-container_right slds-m-right_small">
+                    <lightning-button-icon icon-name="utility:edit" label="More"
+                        variant="container"></lightning-button-icon>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</template>
