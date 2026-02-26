@@ -6,4 +6,8 @@
     <template if:true={isAccordionPage}>
         <main-accordion-example-page onnavigate={handleNavigate}></main-accordion-example-page>
     </template>
+
+    <template if:true={isCustomersPage}>
+        <main-customers-table-page onnavigate={handleNavigate}></main-customers-table-page>
+    </template>
 </template>

@@ -11,6 +11,10 @@ export default class Canvas extends LightningElement {
         return this.currentPage === 'accordion';
     }
 
+    get isCustomersPage() {
+        return this.currentPage === 'customers';
+    }
+
     handleNavigate(event) {
         const page = event.detail.page;
         this.dispatchEvent(new CustomEvent('navigate', {

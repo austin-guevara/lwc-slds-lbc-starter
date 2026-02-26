@@ -1,0 +1,113 @@
+<template>
+    <div class="slds-p-around_large">
+        <div class="slds-m-bottom_medium">
+            <lightning-button 
+                label="Back to Home" 
+                icon-name="utility:back" 
+                onclick={handleNavigateHome}>
+            </lightning-button>
+        </div>
+
+        <h1 class="slds-text-heading_large slds-m-bottom_medium">Customers</h1>
+
+        <!-- Customer Detail Card -->
+        <template if:true={hasSelectedCustomer}>
+            <lightning-card title="Customer Details" icon-name="standard:account" class="slds-m-bottom_large">
+                <div class="slds-p-around_medium">
+                    <div class="slds-grid slds-wrap slds-gutters">
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                            <div class="slds-form-element slds-m-bottom_small">
+                                <label class="slds-form-element__label slds-text-title">Customer Name</label>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-text-heading_medium">{selectedCustomerName}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                            <div class="slds-form-element slds-m-bottom_small">
+                                <label class="slds-form-element__label slds-text-title">Industry</label>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-text-body_regular">{selectedCustomerIndustry}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                            <div class="slds-form-element slds-m-bottom_small">
+                                <label class="slds-form-element__label slds-text-title">Email</label>
+                                <div class="slds-form-element__control">
+                                    <lightning-formatted-email value={selectedCustomerEmail}></lightning-formatted-email>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                            <div class="slds-form-element slds-m-bottom_small">
+                                <label class="slds-form-element__label slds-text-title">Phone</label>
+                                <div class="slds-form-element__control">
+                                    <lightning-formatted-phone value={selectedCustomerPhone}></lightning-formatted-phone>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                            <div class="slds-form-element slds-m-bottom_small">
+                                <label class="slds-form-element__label slds-text-title">Status</label>
+                                <div class="slds-form-element__control">
+                                    <lightning-badge label={selectedCustomerStatus} class={statusVariant}></lightning-badge>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                            <div class="slds-form-element slds-m-bottom_small">
+                                <label class="slds-form-element__label slds-text-title">Annual Revenue</label>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-text-body_regular">{selectedCustomerRevenue}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                            <div class="slds-form-element slds-m-bottom_small">
+                                <label class="slds-form-element__label slds-text-title">Employees</label>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-text-body_regular">{selectedCustomerEmployees}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </lightning-card>
+        </template>
+
+        <!-- Search and Filters -->
+        <lightning-card class="slds-m-bottom_medium">
+            <div class="slds-p-around_medium">
+                <lightning-layout>
+                    <lightning-layout-item flexibility="auto" padding="horizontal-small">
+                        <lightning-input 
+                            type="search" 
+                            label="Search Customers" 
+                            placeholder="Search by name, industry, email, or status..." 
+                            onchange={handleSearch}
+                            variant="label-inline">
+                        </lightning-input>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+        </lightning-card>
+
+        <!-- Customers Table -->
+        <lightning-card title="Customer List" icon-name="standard:account">
+            <div class="slds-p-around_medium">
+                <lightning-datatable
+                    key-field="id"
+                    data={customers}
+                    columns={columns}
+                    onrowaction={handleRowAction}
+                    onrowselection={handleRowSelection}
+                    onsort={handleSort}
+                    sorted-by={sortedBy}
+                    sorted-direction={sortedDirection}
+                    hide-checkbox-column>
+                </lightning-datatable>
+            </div>
+        </lightning-card>
+    </div>
+</template>

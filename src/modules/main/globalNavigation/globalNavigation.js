@@ -11,6 +11,10 @@ export default class GlobalNavigation extends LightningElement {
         return this.currentPage === 'accordion';
     }
 
+    get isCustomersPage() {
+        return this.currentPage === 'customers';
+    }
+
     get homeTabClass() {
         return `slds-context-bar__item ${this.isHomePage ? 'slds-is-active' : ''}`;
     }
@@ -19,10 +23,23 @@ export default class GlobalNavigation extends LightningElement {
         return `slds-context-bar__item ${this.isAccordionPage ? 'slds-is-active' : ''}`;
     }
 
+    get customersTabClass() {
+        return `slds-context-bar__item ${this.isCustomersPage ? 'slds-is-active' : ''}`;
+    }
+
     handleHomeClick(event) {
         event.preventDefault();
         this.dispatchEvent(new CustomEvent('navigate', {
             detail: { page: 'home' },
+            bubbles: true,
+            composed: true
+        }));
+    }
+
+    handleCustomersClick(event) {
+        event.preventDefault();
+        this.dispatchEvent(new CustomEvent('navigate', {
+            detail: { page: 'customers' },
             bubbles: true,
             composed: true
         }));
