@@ -1,8 +1,16 @@
 <template>
   <main>
-    <img src="/public/assets/recipes-logo.png" alt="logo" />
-    <h1>Hello World!</h1>
-
-    <main-accordion-group></main-accordion-group>
+    <lightning-card title="Country Selection" class="slds-p-around_small">
+      <div class="slds-p-around_small">
+        <lightning-combobox
+          name="country"
+          label="Country"
+          placeholder="Select a country"
+          options={countryOptions}
+          value={selectedCountry}
+          onchange={handleCountryChange}
+        ></lightning-combobox>
+      </div>
+    </lightning-card>
   </main>
 </template>
