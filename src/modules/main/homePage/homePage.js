@@ -42,4 +42,21 @@ export default class HomePage extends LightningElement {
             composed: true
         }));
     }
+
+    handleUserSettingsClick() {
+        this.dispatchEvent(new CustomEvent('navigate', {
+            detail: { page: 'usersettings' },
+            bubbles: true,
+            composed: true
+        }));
+    }
+
+    handleNavigateToUserSettings(event) {
+        event.preventDefault();
+        this.dispatchEvent(new CustomEvent('navigate', {
+            detail: { page: 'usersettings' },
+            bubbles: true,
+            composed: true
+        }));
+    }
 }
