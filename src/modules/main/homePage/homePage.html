@@ -113,9 +113,15 @@
                                     <div class="preview-header"></div>
                                     <div class="preview-body"></div>
                                 </div>
-                                <p class="slds-text-body_small">
+                                <p class="slds-text-body_small slds-m-bottom_x-small">
                                     Traditional single-column layout. Best for forms, detail pages, and focused content.
                                 </p>
+                                <lightning-button
+                                    variant="brand"
+                                    label="View Details"
+                                    data-shell="standard"
+                                    onclick={handleViewShellDetails}>
+                                </lightning-button>
                             </div>
                         </lightning-card>
                     </div>
@@ -131,9 +137,15 @@
                                         <div class="preview-split-right"></div>
                                     </div>
                                 </div>
-                                <p class="slds-text-body_small">
+                                <p class="slds-text-body_small slds-m-bottom_x-small">
                                     Two-column layout for displaying related content side-by-side.
                                 </p>
+                                <lightning-button
+                                    variant="brand"
+                                    label="View Details"
+                                    data-shell="split"
+                                    onclick={handleViewShellDetails}>
+                                </lightning-button>
                             </div>
                         </lightning-card>
                     </div>
@@ -148,9 +160,15 @@
                                         <div class="preview-detail"></div>
                                     </div>
                                 </div>
-                                <p class="slds-text-body_small">
+                                <p class="slds-text-body_small slds-m-bottom_x-small">
                                     List on left, details on right. Perfect for browsing collections.
                                 </p>
+                                <lightning-button
+                                    variant="brand"
+                                    label="View Details"
+                                    data-shell="masterDetail"
+                                    onclick={handleViewShellDetails}>
+                                </lightning-button>
                             </div>
                         </lightning-card>
                     </div>
@@ -169,9 +187,15 @@
                                             <div class="preview-grid-item"></div>
                                         </div>
                                     </div>
-                                    <p class="slds-text-body_small">
+                                    <p class="slds-text-body_small slds-m-bottom_x-small">
                                         Responsive grid of cards. Ideal for dashboards and catalogs.
                                     </p>
+                                    <lightning-button
+                                        variant="brand"
+                                        label="View Details"
+                                        data-shell="cardGrid"
+                                        onclick={handleViewShellDetails}>
+                                    </lightning-button>
                                 </div>
                             </lightning-card>
                         </div>
@@ -188,9 +212,15 @@
                                             <div class="preview-list-item"></div>
                                         </div>
                                     </div>
-                                    <p class="slds-text-body_small">
+                                    <p class="slds-text-body_small slds-m-bottom_x-small">
                                         Vertical list with filters. Great for data tables and search results.
                                     </p>
+                                    <lightning-button
+                                        variant="brand"
+                                        label="View Details"
+                                        data-shell="listView"
+                                        onclick={handleViewShellDetails}>
+                                    </lightning-button>
                                 </div>
                             </lightning-card>
                         </div>
@@ -205,9 +235,15 @@
                                             <div class="preview-docked-panel"></div>
                                         </div>
                                     </div>
-                                    <p class="slds-text-body_small">
+                                    <p class="slds-text-body_small slds-m-bottom_x-small">
                                         Main content with collapsible side panel for contextual info.
                                     </p>
+                                    <lightning-button
+                                        variant="brand"
+                                        label="View Details"
+                                        data-shell="docked"
+                                        onclick={handleViewShellDetails}>
+                                    </lightning-button>
                                 </div>
                             </lightning-card>
                         </div>
@@ -221,9 +257,15 @@
                                             <div class="preview-modal"></div>
                                         </div>
                                     </div>
-                                    <p class="slds-text-body_small">
+                                    <p class="slds-text-body_small slds-m-bottom_x-small">
                                         Overlay dialog that focuses user attention.
                                     </p>
+                                    <lightning-button
+                                        variant="brand"
+                                        label="View Details"
+                                        data-shell="modal"
+                                        onclick={handleViewShellDetails}>
+                                    </lightning-button>
                                 </div>
                             </lightning-card>
                         </div>
@@ -238,9 +280,15 @@
                                             <div class="preview-tab-content"></div>
                                         </div>
                                     </div>
-                                    <p class="slds-text-body_small">
+                                    <p class="slds-text-body_small slds-m-bottom_x-small">
                                         Organize related content into separate tabs.
                                     </p>
+                                    <lightning-button
+                                        variant="brand"
+                                        label="View Details"
+                                        data-shell="tabs"
+                                        onclick={handleViewShellDetails}>
+                                    </lightning-button>
                                 </div>
                             </lightning-card>
                         </div>
@@ -256,9 +304,15 @@
                                             <div class="preview-accordion-item"></div>
                                         </div>
                                     </div>
-                                    <p class="slds-text-body_small">
+                                    <p class="slds-text-body_small slds-m-bottom_x-small">
                                         Vertically stacked expandable sections for FAQs and timelines.
                                     </p>
+                                    <lightning-button
+                                        variant="brand"
+                                        label="View Details"
+                                        data-shell="accordion"
+                                        onclick={handleViewShellDetails}>
+                                    </lightning-button>
                                 </div>
                             </lightning-card>
                         </div>
@@ -341,5 +395,12 @@
                 </div>
             </div>
         </lightning-card>
+
+        <!-- Shell Details Modal -->
+        <main-shell-details-modal
+            is-open={isModalOpen}
+            shell-data={selectedShellData}
+            onclose={handleCloseModal}>
+        </main-shell-details-modal>
     </div>
 </template>
