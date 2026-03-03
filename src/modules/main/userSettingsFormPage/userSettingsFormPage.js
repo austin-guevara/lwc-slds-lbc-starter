@@ -79,7 +79,38 @@ export default class UserSettingsFormPage extends LightningElement {
     // Handle input changes
     handleInputChange(event) {
         const field = event.target.name;
-        this.formData[field] = event.target.value;
+        let value = event.target.value;
+
+        // Format phone number automatically
+        if (field === 'phoneNumber') {
+            value = this.formatPhoneNumber(value);
+        }
+
+        this.formData[field] = value;
+    }
+
+    // Format phone number to XXX-XXX-XXXX
+    formatPhoneNumber(value) {
+        // Remove all non-numeric characters
+        const cleaned = value.replace(/\D/g, '');
+
+        // Don't format if less than 4 digits
+        if (cleaned.length < 4) {
+            return cleaned;
+        }
+
+        // Format as XXX-XXX-XXXX
+        if (cleaned.length <= 6) {
+            return cleaned.replace(/(\d{3})(\d{0,3})/, '$1-$2');
+        }
+
+        return cleaned.replace(/(\d{3})(\d{3})(\d{0,4})/, '$1-$2-$3').slice(0, 12);
+    }
+
+    // Validate phone number
+    isValidPhoneNumber(phoneNumber) {
+        const cleaned = phoneNumber.replace(/\D/g, '');
+        return cleaned.length === 10;
     }
 
     // Handle checkbox group changes
@@ -110,6 +141,16 @@ export default class UserSettingsFormPage extends LightningElement {
         inputs.forEach(input => {
             // Only validate if the input is currently visible (in current step)
             if (input.offsetParent !== null) {
+                // Custom validation for phone number
+                if (input.name === 'phoneNumber' && input.value) {
+                    if (!this.isValidPhoneNumber(input.value)) {
+                        input.setCustomValidity('Please enter a valid 10-digit phone number');
+                        allValid = false;
+                    } else {
+                        input.setCustomValidity('');
+                    }
+                }
+
                 const isValid = input.reportValidity();
                 if (!isValid) {
                     allValid = false;
