@@ -33,6 +33,112 @@
                     Explore different UI Shell patterns and their use cases. When asking Builder.io to build something, you can reference these layouts. If you don't know which to use, that's ok, Builder will choose an appropriate one based on your request.
                 </p>
 
+                <!-- Foundational Shell Components -->
+                <h3 class="slds-text-heading_small slds-m-bottom_x-small slds-m-top_medium">Foundational Shell Components</h3>
+                <p class="slds-text-body_small slds-m-bottom_small slds-text-color_weak">
+                    Core UI Shell components that provide the basic structure of Salesforce applications.
+                </p>
+                <div class="slds-grid slds-wrap slds-gutters_small slds-m-bottom_medium">
+                    <!-- Global Header -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                        <lightning-card title="Global Header" icon-name="utility:magicwand" class="slds-m-bottom_small shell-card">
+                            <div class="slds-p-around_small">
+                                <div class="shell-preview slds-box slds-m-bottom_x-small">
+                                    <div class="preview-header" style="height: 30px;"></div>
+                                </div>
+                                <p class="slds-text-body_small">
+                                    Top header with branding, global search, and user menu.
+                                </p>
+                            </div>
+                        </lightning-card>
+                    </div>
+
+                    <!-- Global Navigation -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                        <lightning-card title="Global Navigation" icon-name="utility:threedots" class="slds-m-bottom_small shell-card">
+                            <div class="slds-p-around_small">
+                                <div class="shell-preview slds-box slds-m-bottom_x-small">
+                                    <div class="preview-header" style="height: 25px; margin-bottom: 3px;"></div>
+                                    <div class="preview-body"></div>
+                                </div>
+                                <p class="slds-text-body_small">
+                                    Context bar with app switcher and navigation tabs.
+                                </p>
+                            </div>
+                        </lightning-card>
+                    </div>
+
+                    <!-- Side Panel -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                        <lightning-card title="Side Panel" icon-name="utility:side_list" class="slds-m-bottom_small shell-card">
+                            <div class="slds-p-around_small">
+                                <div class="shell-preview slds-box slds-m-bottom_x-small">
+                                    <div class="preview-docked">
+                                        <div class="preview-main-content"></div>
+                                        <div class="preview-docked-panel"></div>
+                                    </div>
+                                </div>
+                                <p class="slds-text-body_small">
+                                    Pinnable side panel for contextual information.
+                                </p>
+                            </div>
+                        </lightning-card>
+                    </div>
+
+                    <!-- Docked Composer -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                        <lightning-card title="Docked Composer" icon-name="utility:insert_tag_field" class="slds-m-bottom_small shell-card">
+                            <div class="slds-p-around_small">
+                                <div class="shell-preview slds-box slds-m-bottom_x-small">
+                                    <div style="height: 70px; background: var(--slds-g-color-surface-container-2, #f3f3f3);"></div>
+                                    <div style="height: 30px; background: var(--slds-g-color-surface-container-1, #fff); border: 1px solid var(--slds-g-color-border-1, #e5e5e5); margin-top: 3px;"></div>
+                                </div>
+                                <p class="slds-text-body_small">
+                                    Bottom docked panel for multi-tasking workflows.
+                                </p>
+                            </div>
+                        </lightning-card>
+                    </div>
+
+                    <!-- Utility Bar -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                        <lightning-card title="Utility Bar" icon-name="utility:bottom_bar" class="slds-m-bottom_small shell-card">
+                            <div class="slds-p-around_small">
+                                <div class="shell-preview slds-box slds-m-bottom_x-small">
+                                    <div style="height: 70px; background: var(--slds-g-color-surface-container-2, #f3f3f3);"></div>
+                                    <div style="height: 28px; background: var(--slds-g-color-surface-container-1, #fff); border-top: 2px solid var(--slds-g-color-border-1, #e5e5e5); display: flex; gap: 6px; padding: 4px;">
+                                        <div style="width: 60px; height: 100%; background: var(--slds-g-color-accent-1, #066afe); border-radius: 3px;"></div>
+                                        <div style="width: 60px; height: 100%; background: var(--slds-g-color-surface-container-3, #e5e5e5); border-radius: 3px;"></div>
+                                    </div>
+                                </div>
+                                <p class="slds-text-body_small">
+                                    Persistent toolbar for quick access to utilities.
+                                </p>
+                            </div>
+                        </lightning-card>
+                    </div>
+
+                    <!-- Canvas / Main Content Area -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                        <lightning-card title="Canvas (Main Content)" icon-name="utility:canvas" class="slds-m-bottom_small shell-card">
+                            <div class="slds-p-around_small">
+                                <div class="shell-preview slds-box slds-m-bottom_x-small">
+                                    <div class="preview-header" style="height: 12px; margin-bottom: 3px;"></div>
+                                    <div class="preview-body" style="min-height: 60px;"></div>
+                                </div>
+                                <p class="slds-text-body_small">
+                                    Main content area where page layouts render.
+                                </p>
+                            </div>
+                        </lightning-card>
+                    </div>
+                </div>
+
+                <!-- Layout Patterns -->
+                <h3 class="slds-text-heading_small slds-m-bottom_x-small slds-m-top_small">Layout Patterns</h3>
+                <p class="slds-text-body_small slds-m-bottom_small slds-text-color_weak">
+                    Common layout patterns for organizing content within the canvas area.
+                </p>
                 <div class="slds-grid slds-wrap slds-gutters_small">
                     <!-- Standard Page Layout -->
                     <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">

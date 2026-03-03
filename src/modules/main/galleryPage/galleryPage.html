@@ -23,7 +23,132 @@
             </div>
         </div>
 
-        <!-- UI Shell Grid -->
+        <!-- Foundational Shell Components Section -->
+        <div class="slds-m-bottom_x-large">
+            <h2 class="slds-text-heading_medium slds-m-bottom_small">Foundational Shell Components</h2>
+            <p class="slds-text-body_regular slds-m-bottom_medium">
+                Core UI Shell components that provide the basic structure of Salesforce applications.
+            </p>
+            <div class="slds-grid slds-wrap slds-gutters">
+                <!-- Global Header -->
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                    <lightning-card title="Global Header" icon-name="utility:magicwand" class="slds-m-bottom_medium shell-card">
+                        <div class="slds-p-around_medium">
+                            <div class="shell-preview slds-box slds-m-bottom_small">
+                                <div class="preview-header" style="height: 40px;"></div>
+                            </div>
+                            <p class="slds-text-body_small slds-m-bottom_small">
+                                The top-level header with Salesforce branding, global search, favorites, Agentforce, help, settings, notifications, and user menu.
+                            </p>
+                            <div class="slds-text-body_small slds-text-color_weak">
+                                <strong>Use cases:</strong> Top-level navigation, global actions, user profile access
+                            </div>
+                        </div>
+                    </lightning-card>
+                </div>
+
+                <!-- Global Navigation -->
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                    <lightning-card title="Global Navigation" icon-name="utility:threedots" class="slds-m-bottom_medium shell-card">
+                        <div class="slds-p-around_medium">
+                            <div class="shell-preview slds-box slds-m-bottom_small">
+                                <div class="preview-header" style="height: 30px; margin-bottom: 4px;"></div>
+                                <div class="preview-body"></div>
+                            </div>
+                            <p class="slds-text-body_small slds-m-bottom_small">
+                                The context bar navigation that displays app switcher and primary navigation tabs. Sits below the global header.
+                            </p>
+                            <div class="slds-text-body_small slds-text-color_weak">
+                                <strong>Use cases:</strong> App navigation, tab switching, breadcrumb trails
+                            </div>
+                        </div>
+                    </lightning-card>
+                </div>
+
+                <!-- Side Panel -->
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                    <lightning-card title="Side Panel" icon-name="utility:side_list" class="slds-m-bottom_medium shell-card">
+                        <div class="slds-p-around_medium">
+                            <div class="shell-preview slds-box slds-m-bottom_small">
+                                <div class="preview-docked">
+                                    <div class="preview-main-content"></div>
+                                    <div class="preview-docked-panel"></div>
+                                </div>
+                            </div>
+                            <p class="slds-text-body_small slds-m-bottom_small">
+                                A pinnable side panel that can display contextual information without leaving the current page. Can be closed or pinned open.
+                            </p>
+                            <div class="slds-text-body_small slds-text-color_weak">
+                                <strong>Use cases:</strong> Related lists, contextual help, activity feeds
+                            </div>
+                        </div>
+                    </lightning-card>
+                </div>
+
+                <!-- Docked Composer -->
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                    <lightning-card title="Docked Composer" icon-name="utility:insert_tag_field" class="slds-m-bottom_medium shell-card">
+                        <div class="slds-p-around_medium">
+                            <div class="shell-preview slds-box slds-m-bottom_small">
+                                <div style="height: 100px; background: var(--slds-g-color-surface-container-2, #f3f3f3);"></div>
+                                <div style="height: 40px; background: var(--slds-g-color-surface-container-1, #fff); border: 1px solid var(--slds-g-color-border-1, #e5e5e5); margin-top: 4px;"></div>
+                            </div>
+                            <p class="slds-text-body_small slds-m-bottom_small">
+                                A docked panel at the bottom of the screen that can be minimized, expanded, or closed. Perfect for multi-tasking workflows.
+                            </p>
+                            <div class="slds-text-body_small slds-text-color_weak">
+                                <strong>Use cases:</strong> Email composer, quick create forms, chat windows
+                            </div>
+                        </div>
+                    </lightning-card>
+                </div>
+
+                <!-- Utility Bar -->
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                    <lightning-card title="Utility Bar" icon-name="utility:bottom_bar" class="slds-m-bottom_medium shell-card">
+                        <div class="slds-p-around_medium">
+                            <div class="shell-preview slds-box slds-m-bottom_small">
+                                <div style="height: 100px; background: var(--slds-g-color-surface-container-2, #f3f3f3);"></div>
+                                <div style="height: 35px; background: var(--slds-g-color-surface-container-1, #fff); border-top: 2px solid var(--slds-g-color-border-1, #e5e5e5); display: flex; gap: 8px; padding: 6px;">
+                                    <div style="width: 80px; height: 100%; background: var(--slds-g-color-accent-1, #066afe); border-radius: 4px;"></div>
+                                    <div style="width: 80px; height: 100%; background: var(--slds-g-color-surface-container-3, #e5e5e5); border-radius: 4px;"></div>
+                                </div>
+                            </div>
+                            <p class="slds-text-body_small slds-m-bottom_small">
+                                A persistent toolbar at the bottom of the screen providing quick access to common utilities and tools across all pages.
+                            </p>
+                            <div class="slds-text-body_small slds-text-color_weak">
+                                <strong>Use cases:</strong> Quick access to to-do lists, calculators, recent items
+                            </div>
+                        </div>
+                    </lightning-card>
+                </div>
+
+                <!-- Canvas / Main Content Area -->
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                    <lightning-card title="Canvas (Main Content)" icon-name="utility:canvas" class="slds-m-bottom_medium shell-card">
+                        <div class="slds-p-around_medium">
+                            <div class="shell-preview slds-box slds-m-bottom_small">
+                                <div class="preview-header" style="height: 15px; margin-bottom: 4px;"></div>
+                                <div class="preview-body" style="min-height: 80px;"></div>
+                            </div>
+                            <p class="slds-text-body_small slds-m-bottom_small">
+                                The main content area where page layouts render. This is where your actual page content, records, and data display.
+                            </p>
+                            <div class="slds-text-body_small slds-text-color_weak">
+                                <strong>Use cases:</strong> All page content, record details, lists, dashboards
+                            </div>
+                        </div>
+                    </lightning-card>
+                </div>
+            </div>
+        </div>
+
+        <!-- Layout Patterns Section -->
+        <h2 class="slds-text-heading_medium slds-m-bottom_small">Layout Patterns</h2>
+        <p class="slds-text-body_regular slds-m-bottom_medium">
+            Common layout patterns for organizing content within the canvas area.
+        </p>
         <div class="slds-grid slds-wrap slds-gutters">
             <!-- Standard Page Layout -->
             <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
