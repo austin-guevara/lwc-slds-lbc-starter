@@ -45,6 +45,12 @@
                         <span class="slds-truncate" title="User Settings">User Settings</span>
                     </a>
                 </li>
+                <li class={galleryTabClass}>
+                    <a href="#" class="slds-context-bar__label-action" title="Gallery" onclick={handleGalleryClick}>
+                        <span class="slds-assistive-text" if:true={isGalleryPage}>Current Page:</span>
+                        <span class="slds-truncate" title="Gallery">Gallery</span>
+                    </a>
+                </li>
             </ul>
         </nav>
     </div>

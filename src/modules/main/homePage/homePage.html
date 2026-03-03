@@ -78,6 +78,21 @@
                             </div>
                         </lightning-card>
                     </div>
+
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4">
+                        <lightning-card title="UI Shell Gallery" icon-name="standard:canvas" class="slds-m-bottom_small">
+                            <div class="slds-p-around_small">
+                                <p class="slds-text-body_small slds-m-bottom_x-small">
+                                    Explore available UI Shell patterns and layouts with visual examples and descriptions.
+                                </p>
+                                <lightning-button
+                                    variant="brand"
+                                    label="View Page"
+                                    onclick={handleGalleryClick}>
+                                </lightning-button>
+                            </div>
+                        </lightning-card>
+                    </div>
                 </div>
             </div>
         </lightning-card>
@@ -130,6 +145,17 @@
                         </a>
                         <p class="slds-text-body_regular slds-m-top_x-small">
                             Multi-step form with comprehensive validation and progress tracking
+                        </p>
+                    </div>
+                </div>
+
+                <div class="slds-m-bottom_medium">
+                    <div class="slds-m-bottom_small">
+                        <a href="#" onclick={handleNavigateToGallery} class="slds-text-link">
+                            <span class="slds-text-heading_small">UI Shell Gallery</span>
+                        </a>
+                        <p class="slds-text-body_regular slds-m-top_x-small">
+                            Explore available UI Shell patterns and layouts with visual previews
                         </p>
                     </div>
                 </div>

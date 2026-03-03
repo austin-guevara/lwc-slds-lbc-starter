@@ -27,6 +27,10 @@ export default class GlobalNavigation extends LightningElement {
         return this.currentPage === 'usersettings';
     }
 
+    get isGalleryPage() {
+        return this.currentPage === 'gallery';
+    }
+
     get homeTabClass() {
         return `slds-context-bar__item ${this.isHomePage ? 'slds-is-active' : ''}`;
     }
@@ -49,6 +53,10 @@ export default class GlobalNavigation extends LightningElement {
 
     get userSettingsTabClass() {
         return `slds-context-bar__item ${this.isUserSettingsPage ? 'slds-is-active' : ''}`;
+    }
+
+    get galleryTabClass() {
+        return `slds-context-bar__item ${this.isGalleryPage ? 'slds-is-active' : ''}`;
     }
 
     handleHomeClick(event) {
@@ -100,6 +108,15 @@ export default class GlobalNavigation extends LightningElement {
         event.preventDefault();
         this.dispatchEvent(new CustomEvent('navigate', {
             detail: { page: 'usersettings' },
+            bubbles: true,
+            composed: true
+        }));
+    }
+
+    handleGalleryClick(event) {
+        event.preventDefault();
+        this.dispatchEvent(new CustomEvent('navigate', {
+            detail: { page: 'gallery' },
             bubbles: true,
             composed: true
         }));

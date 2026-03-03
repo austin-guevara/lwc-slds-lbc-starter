@@ -1,0 +1,212 @@
+<template>
+    <div class="slds-p-around_large">
+        <!-- Page Header -->
+        <div class="slds-page-header slds-m-bottom_large">
+            <div class="slds-page-header__row">
+                <div class="slds-page-header__col-title">
+                    <div class="slds-media">
+                        <div class="slds-media__figure">
+                            <lightning-icon icon-name="standard:canvas" size="medium"></lightning-icon>
+                        </div>
+                        <div class="slds-media__body">
+                            <div class="slds-page-header__name">
+                                <div class="slds-page-header__name-title">
+                                    <h1>
+                                        <span class="slds-page-header__title slds-truncate">UI Shell Gallery</span>
+                                    </h1>
+                                </div>
+                            </div>
+                            <p class="slds-page-header__name-meta">Explore available UI Shell patterns and layouts</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- UI Shell Grid -->
+        <div class="slds-grid slds-wrap slds-gutters">
+            <!-- Standard Page Layout -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                <lightning-card title="Standard Page Layout" icon-name="utility:page" class="slds-m-bottom_medium shell-card">
+                    <div class="slds-p-around_medium">
+                        <div class="shell-preview slds-box slds-m-bottom_small">
+                            <div class="preview-header"></div>
+                            <div class="preview-body"></div>
+                        </div>
+                        <p class="slds-text-body_small slds-m-bottom_small">
+                            A traditional single-column layout with header and content area. Best for forms, detail pages, and focused content.
+                        </p>
+                        <div class="slds-text-body_small slds-text-color_weak">
+                            <strong>Use cases:</strong> Detail pages, forms, settings
+                        </div>
+                    </div>
+                </lightning-card>
+            </div>
+
+            <!-- Split View Layout -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                <lightning-card title="Split View Layout" icon-name="utility:layout" class="slds-m-bottom_medium shell-card">
+                    <div class="slds-p-around_medium">
+                        <div class="shell-preview slds-box slds-m-bottom_small">
+                            <div class="preview-header"></div>
+                            <div class="preview-split">
+                                <div class="preview-split-left"></div>
+                                <div class="preview-split-right"></div>
+                            </div>
+                        </div>
+                        <p class="slds-text-body_small slds-m-bottom_small">
+                            Two-column layout for displaying related content side-by-side. Ideal for comparing data or showing context.
+                        </p>
+                        <div class="slds-text-body_small slds-text-color_weak">
+                            <strong>Use cases:</strong> Comparison views, side-by-side editing
+                        </div>
+                    </div>
+                </lightning-card>
+            </div>
+
+            <!-- Master-Detail Layout -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                <lightning-card title="Master-Detail Layout" icon-name="utility:rows" class="slds-m-bottom_medium shell-card">
+                    <div class="slds-p-around_medium">
+                        <div class="shell-preview slds-box slds-m-bottom_small">
+                            <div class="preview-master-detail">
+                                <div class="preview-master"></div>
+                                <div class="preview-detail"></div>
+                            </div>
+                        </div>
+                        <p class="slds-text-body_small slds-m-bottom_small">
+                            List on left, details on right. Select an item from the list to view its details. Perfect for browsing collections.
+                        </p>
+                        <div class="slds-text-body_small slds-text-color_weak">
+                            <strong>Use cases:</strong> Email clients, file browsers, contact lists
+                        </div>
+                    </div>
+                </lightning-card>
+            </div>
+
+            <!-- Card Grid Layout -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                <lightning-card title="Card Grid Layout" icon-name="utility:apps" class="slds-m-bottom_medium shell-card">
+                    <div class="slds-p-around_medium">
+                        <div class="shell-preview slds-box slds-m-bottom_small">
+                            <div class="preview-grid">
+                                <div class="preview-grid-item"></div>
+                                <div class="preview-grid-item"></div>
+                                <div class="preview-grid-item"></div>
+                                <div class="preview-grid-item"></div>
+                            </div>
+                        </div>
+                        <p class="slds-text-body_small slds-m-bottom_small">
+                            Responsive grid of cards displaying multiple items. Scales from 1 to 4 columns based on screen size.
+                        </p>
+                        <div class="slds-text-body_small slds-text-color_weak">
+                            <strong>Use cases:</strong> Dashboards, product catalogs, app launchers
+                        </div>
+                    </div>
+                </lightning-card>
+            </div>
+
+            <!-- List View Layout -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                <lightning-card title="List View Layout" icon-name="utility:list" class="slds-m-bottom_medium shell-card">
+                    <div class="slds-p-around_medium">
+                        <div class="shell-preview slds-box slds-m-bottom_small">
+                            <div class="preview-header"></div>
+                            <div class="preview-list">
+                                <div class="preview-list-item"></div>
+                                <div class="preview-list-item"></div>
+                                <div class="preview-list-item"></div>
+                            </div>
+                        </div>
+                        <p class="slds-text-body_small slds-m-bottom_small">
+                            Vertical list of items with optional filters and actions. Great for displaying searchable collections.
+                        </p>
+                        <div class="slds-text-body_small slds-text-color_weak">
+                            <strong>Use cases:</strong> Data tables, search results, task lists
+                        </div>
+                    </div>
+                </lightning-card>
+            </div>
+
+            <!-- Docked Panel Layout -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                <lightning-card title="Docked Panel Layout" icon-name="utility:side_list" class="slds-m-bottom_medium shell-card">
+                    <div class="slds-p-around_medium">
+                        <div class="shell-preview slds-box slds-m-bottom_small">
+                            <div class="preview-docked">
+                                <div class="preview-main-content"></div>
+                                <div class="preview-docked-panel"></div>
+                            </div>
+                        </div>
+                        <p class="slds-text-body_small slds-m-bottom_small">
+                            Main content with collapsible side panel. Panel can be opened/closed without affecting main content.
+                        </p>
+                        <div class="slds-text-body_small slds-text-color_weak">
+                            <strong>Use cases:</strong> Contextual help, related info, utility panels
+                        </div>
+                    </div>
+                </lightning-card>
+            </div>
+
+            <!-- Modal Dialog Layout -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                <lightning-card title="Modal Dialog Layout" icon-name="utility:new_window" class="slds-m-bottom_medium shell-card">
+                    <div class="slds-p-around_medium">
+                        <div class="shell-preview slds-box slds-m-bottom_small">
+                            <div class="preview-modal-backdrop">
+                                <div class="preview-modal"></div>
+                            </div>
+                        </div>
+                        <p class="slds-text-body_small slds-m-bottom_small">
+                            Overlay dialog that focuses user attention. Blocks interaction with underlying content until dismissed.
+                        </p>
+                        <div class="slds-text-body_small slds-text-color_weak">
+                            <strong>Use cases:</strong> Confirmations, quick edits, alerts
+                        </div>
+                    </div>
+                </lightning-card>
+            </div>
+
+            <!-- Tabs Layout -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                <lightning-card title="Tabs Layout" icon-name="utility:multi_select_checkbox" class="slds-m-bottom_medium shell-card">
+                    <div class="slds-p-around_medium">
+                        <div class="shell-preview slds-box slds-m-bottom_small">
+                            <div class="preview-tabs">
+                                <div class="preview-tab-header"></div>
+                                <div class="preview-tab-content"></div>
+                            </div>
+                        </div>
+                        <p class="slds-text-body_small slds-m-bottom_small">
+                            Organize related content into separate tabs. Users switch between tabs to view different content sections.
+                        </p>
+                        <div class="slds-text-body_small slds-text-color_weak">
+                            <strong>Use cases:</strong> Multi-section forms, settings, profiles
+                        </div>
+                    </div>
+                </lightning-card>
+            </div>
+
+            <!-- Accordion Layout -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                <lightning-card title="Accordion Layout" icon-name="utility:record" class="slds-m-bottom_medium shell-card">
+                    <div class="slds-p-around_medium">
+                        <div class="shell-preview slds-box slds-m-bottom_small">
+                            <div class="preview-accordion">
+                                <div class="preview-accordion-item"></div>
+                                <div class="preview-accordion-item"></div>
+                                <div class="preview-accordion-item"></div>
+                            </div>
+                        </div>
+                        <p class="slds-text-body_small slds-m-bottom_small">
+                            Vertically stacked sections that expand/collapse. Conserves space while organizing related content.
+                        </p>
+                        <div class="slds-text-body_small slds-text-color_weak">
+                            <strong>Use cases:</strong> FAQs, activity timelines, grouped data
+                        </div>
+                    </div>
+                </lightning-card>
+            </div>
+        </div>
+    </div>
+</template>

@@ -22,4 +22,8 @@
     <template if:true={isUserSettingsPage}>
         <main-user-settings-form-page onnavigate={handleNavigate}></main-user-settings-form-page>
     </template>
+
+    <template if:true={isGalleryPage}>
+        <main-gallery-page onnavigate={handleNavigate}></main-gallery-page>
+    </template>
 </template>

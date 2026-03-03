@@ -59,4 +59,21 @@ export default class HomePage extends LightningElement {
             composed: true
         }));
     }
+
+    handleGalleryClick() {
+        this.dispatchEvent(new CustomEvent('navigate', {
+            detail: { page: 'gallery' },
+            bubbles: true,
+            composed: true
+        }));
+    }
+
+    handleNavigateToGallery(event) {
+        event.preventDefault();
+        this.dispatchEvent(new CustomEvent('navigate', {
+            detail: { page: 'gallery' },
+            bubbles: true,
+            composed: true
+        }));
+    }
 }
