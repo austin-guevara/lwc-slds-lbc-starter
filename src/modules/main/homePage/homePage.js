@@ -234,6 +234,15 @@ export default class HomePage extends LightningElement {
         }));
     }
 
+    handleNavigateToContact(event) {
+        event.preventDefault();
+        this.dispatchEvent(new CustomEvent('navigate', {
+            detail: { page: 'contact' },
+            bubbles: true,
+            composed: true
+        }));
+    }
+
     handleNavigateToAccordion(event) {
         event.preventDefault();
         this.dispatchEvent(new CustomEvent('navigate', {
