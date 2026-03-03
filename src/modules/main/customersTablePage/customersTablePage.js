@@ -11,78 +11,62 @@ const CUSTOMER_DATA = [
     { id: '8', name: 'Energy Solutions', industry: 'Energy', email: 'contact@energysol.com', phone: '(555) 890-1234', status: 'Inactive', revenue: 6700000, employees: 580 },
 ];
 
-const COLUMNS = [
-    { label: 'Customer Name', fieldName: 'name', type: 'text', sortable: true },
-    { label: 'Industry', fieldName: 'industry', type: 'text', sortable: true },
-    { label: 'Email', fieldName: 'email', type: 'email', sortable: true },
-    { label: 'Phone', fieldName: 'phone', type: 'phone', sortable: true },
-    { label: 'Status', fieldName: 'status', type: 'text', sortable: true },
-    { label: 'Revenue', fieldName: 'revenue', type: 'currency', sortable: true },
-    {
-        type: 'action',
-        typeAttributes: {
-            rowActions: [
-                { label: 'View Details', name: 'view_details' },
-                { label: 'Edit', name: 'edit' },
-                { label: 'Delete', name: 'delete' }
-            ]
-        }
-    }
-];
-
 export default class CustomersTablePage extends LightningElement {
-    @track customers = CUSTOMER_DATA;
     @track selectedCustomer = null;
     @track searchTerm = '';
-    @track sortedBy;
-    @track sortedDirection = 'asc';
+    @track allCustomers = CUSTOMER_DATA;
 
-    columns = COLUMNS;
-    allCustomers = CUSTOMER_DATA;
-
-    get hasSelectedCustomer() {
-        return this.selectedCustomer !== null;
+    connectedCallback() {
+        // Select first customer by default
+        if (this.allCustomers.length > 0) {
+            this.selectedCustomer = this.allCustomers[0];
+        }
     }
 
-    get selectedCustomerName() {
-        return this.selectedCustomer?.name || '';
+    get customers() {
+        let filteredCustomers = this.allCustomers;
+        
+        if (this.searchTerm) {
+            filteredCustomers = this.allCustomers.filter(customer => {
+                return (
+                    customer.name.toLowerCase().includes(this.searchTerm) ||
+                    customer.industry.toLowerCase().includes(this.searchTerm) ||
+                    customer.email.toLowerCase().includes(this.searchTerm) ||
+                    customer.status.toLowerCase().includes(this.searchTerm)
+                );
+            });
+        }
+
+        // Add computed properties for UI
+        return filteredCustomers.map(customer => ({
+            ...customer,
+            itemClass: this.selectedCustomer?.id === customer.id 
+                ? 'slds-is-selected customer-item' 
+                : 'customer-item',
+            badgeClass: this.getBadgeClass(customer.status)
+        }));
     }
 
-    get selectedCustomerIndustry() {
-        return this.selectedCustomer?.industry || '';
-    }
-
-    get selectedCustomerEmail() {
-        return this.selectedCustomer?.email || '';
-    }
-
-    get selectedCustomerPhone() {
-        return this.selectedCustomer?.phone || '';
-    }
-
-    get selectedCustomerStatus() {
-        return this.selectedCustomer?.status || '';
+    get hasCustomers() {
+        return this.customers.length > 0;
     }
 
     get selectedCustomerRevenue() {
-        return this.selectedCustomer?.revenue ? `$${this.selectedCustomer.revenue.toLocaleString()}` : '';
+        return this.selectedCustomer?.revenue 
+            ? `$${this.selectedCustomer.revenue.toLocaleString()}` 
+            : '';
     }
 
-    get selectedCustomerEmployees() {
-        return this.selectedCustomer?.employees || '';
-    }
-
-    get statusVariant() {
-        if (!this.selectedCustomer) return 'base';
-        switch (this.selectedCustomer.status) {
+    getBadgeClass(status) {
+        switch (status) {
             case 'Active':
-                return 'success';
+                return 'slds-theme_success';
             case 'Inactive':
-                return 'warning';
+                return 'slds-theme_warning';
             case 'Prospect':
-                return 'base';
+                return 'slds-theme_default';
             default:
-                return 'base';
+                return 'slds-theme_default';
         }
     }
 
@@ -95,80 +79,12 @@ export default class CustomersTablePage extends LightningElement {
         }));
     }
 
-    handleRowSelection(event) {
-        const selectedRows = event.detail.selectedRows;
-        if (selectedRows.length > 0) {
-            this.selectedCustomer = selectedRows[0];
-        }
-    }
-
-    handleRowAction(event) {
-        const actionName = event.detail.action.name;
-        const row = event.detail.row;
-        
-        switch (actionName) {
-            case 'view_details':
-                this.selectedCustomer = row;
-                break;
-            case 'edit':
-                // Edit functionality would go here
-                console.log('Edit customer:', row.name);
-                break;
-            case 'delete':
-                // Delete functionality would go here
-                console.log('Delete customer:', row.name);
-                break;
-            default:
-                break;
-        }
+    handleCustomerClick(event) {
+        const customerId = event.currentTarget.dataset.id;
+        this.selectedCustomer = this.allCustomers.find(customer => customer.id === customerId);
     }
 
     handleSearch(event) {
         this.searchTerm = event.target.value.toLowerCase();
-        this.filterCustomers();
-    }
-
-    handleSort(event) {
-        const { fieldName, sortDirection } = event.detail;
-        this.sortedBy = fieldName;
-        this.sortedDirection = sortDirection;
-        this.sortCustomers();
-    }
-
-    filterCustomers() {
-        if (!this.searchTerm) {
-            this.customers = [...this.allCustomers];
-        } else {
-            this.customers = this.allCustomers.filter(customer => {
-                return (
-                    customer.name.toLowerCase().includes(this.searchTerm) ||
-                    customer.industry.toLowerCase().includes(this.searchTerm) ||
-                    customer.email.toLowerCase().includes(this.searchTerm) ||
-                    customer.status.toLowerCase().includes(this.searchTerm)
-                );
-            });
-        }
-        this.sortCustomers();
-    }
-
-    sortCustomers() {
-        if (!this.sortedBy) return;
-
-        const data = [...this.customers];
-        const reverse = this.sortedDirection === 'asc' ? 1 : -1;
-
-        data.sort((a, b) => {
-            let aVal = a[this.sortedBy];
-            let bVal = b[this.sortedBy];
-
-            if (typeof aVal === 'string') {
-                aVal = aVal.toLowerCase();
-                bVal = bVal.toLowerCase();
-            }
-
-            return aVal > bVal ? reverse : aVal < bVal ? -reverse : 0;
-        });
-
-        this.customers = data;
     }
 }
