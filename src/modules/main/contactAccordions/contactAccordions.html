@@ -1,0 +1,147 @@
+<template>
+    <div class="slds-grid slds-grid_vertical slds-gutters_small">
+        <!-- Recent Activity Accordion -->
+        <div class="slds-col">
+            <lightning-card>
+                <lightning-accordion active-section-name={activeSections} allow-multiple-sections-open>
+                    <lightning-accordion-section name="recent-activity" label="Recent Activity">
+                        <div class="slds-p-horizontal_small">
+                            <ul class="slds-has-dividers_bottom-space">
+                                <li class="slds-item slds-p-bottom_small">
+                                    <div class="slds-media">
+                                        <div class="slds-media__figure">
+                                            <lightning-icon icon-name="utility:email" size="small"></lightning-icon>
+                                        </div>
+                                        <div class="slds-media__body">
+                                            <p class="slds-text-body_regular">
+                                                <strong>Email Sent</strong>
+                                            </p>
+                                            <p class="slds-text-color_weak slds-text-body_small">
+                                                Sent follow-up email about project status
+                                            </p>
+                                            <p class="slds-text-color_weak slds-text-body_small">
+                                                2 hours ago
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="slds-item slds-p-bottom_small">
+                                    <div class="slds-media">
+                                        <div class="slds-media__figure">
+                                            <lightning-icon icon-name="utility:call" size="small"></lightning-icon>
+                                        </div>
+                                        <div class="slds-media__body">
+                                            <p class="slds-text-body_regular">
+                                                <strong>Phone Call</strong>
+                                            </p>
+                                            <p class="slds-text-color_weak slds-text-body_small">
+                                                Discussed quarterly goals and timeline
+                                            </p>
+                                            <p class="slds-text-color_weak slds-text-body_small">
+                                                Yesterday at 3:30 PM
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="slds-item slds-p-bottom_small">
+                                    <div class="slds-media">
+                                        <div class="slds-media__figure">
+                                            <lightning-icon icon-name="utility:task" size="small"></lightning-icon>
+                                        </div>
+                                        <div class="slds-media__body">
+                                            <p class="slds-text-body_regular">
+                                                <strong>Task Completed</strong>
+                                            </p>
+                                            <p class="slds-text-color_weak slds-text-body_small">
+                                                Reviewed and approved proposal document
+                                            </p>
+                                            <p class="slds-text-color_weak slds-text-body_small">
+                                                3 days ago
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </lightning-accordion-section>
+
+                    <lightning-accordion-section name="related-contacts" label="Related Contacts">
+                        <div class="slds-p-horizontal_small">
+                            <ul class="slds-has-dividers_bottom-space">
+                                <li class="slds-item slds-p-bottom_small">
+                                    <div class="slds-media">
+                                        <div class="slds-media__figure">
+                                            <lightning-avatar 
+                                                src="" 
+                                                fallback-icon-name="standard:avatar" 
+                                                size="small" 
+                                                alternative-text="Michael Chen">
+                                            </lightning-avatar>
+                                        </div>
+                                        <div class="slds-media__body">
+                                            <p class="slds-text-body_regular">
+                                                <strong>Michael Chen</strong>
+                                            </p>
+                                            <p class="slds-text-color_weak slds-text-body_small">
+                                                Project Manager
+                                            </p>
+                                            <p class="slds-text-color_weak slds-text-body_small">
+                                                michael.chen@example.com
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="slds-item slds-p-bottom_small">
+                                    <div class="slds-media">
+                                        <div class="slds-media__figure">
+                                            <lightning-avatar 
+                                                src="" 
+                                                fallback-icon-name="standard:avatar" 
+                                                size="small" 
+                                                alternative-text="Emily Rodriguez">
+                                            </lightning-avatar>
+                                        </div>
+                                        <div class="slds-media__body">
+                                            <p class="slds-text-body_regular">
+                                                <strong>Emily Rodriguez</strong>
+                                            </p>
+                                            <p class="slds-text-color_weak slds-text-body_small">
+                                                Team Lead
+                                            </p>
+                                            <p class="slds-text-color_weak slds-text-body_small">
+                                                emily.rodriguez@example.com
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="slds-item slds-p-bottom_small">
+                                    <div class="slds-media">
+                                        <div class="slds-media__figure">
+                                            <lightning-avatar 
+                                                src="" 
+                                                fallback-icon-name="standard:avatar" 
+                                                size="small" 
+                                                alternative-text="David Kim">
+                                            </lightning-avatar>
+                                        </div>
+                                        <div class="slds-media__body">
+                                            <p class="slds-text-body_regular">
+                                                <strong>David Kim</strong>
+                                            </p>
+                                            <p class="slds-text-color_weak slds-text-body_small">
+                                                Senior Developer
+                                            </p>
+                                            <p class="slds-text-color_weak slds-text-body_small">
+                                                david.kim@example.com
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </lightning-accordion-section>
+                </lightning-accordion>
+            </lightning-card>
+        </div>
+    </div>
+</template>

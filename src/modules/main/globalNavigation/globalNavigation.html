@@ -27,6 +27,12 @@
                         <span class="slds-truncate" title="Customers">Customers</span>
                     </a>
                 </li>
+                <li class={contactTabClass}>
+                    <a href="#" class="slds-context-bar__label-action" title="Contact" onclick={handleContactClick}>
+                        <span class="slds-assistive-text" if:true={isContactPage}>Current Page:</span>
+                        <span class="slds-truncate" title="Contact">Contact</span>
+                    </a>
+                </li>
                 <li class={accordionTabClass}>
                     <a href="#" class="slds-context-bar__label-action" title="Accordion Example" onclick={handleAccordionClick}>
                         <span class="slds-assistive-text" if:true={isAccordionPage}>Current Page:</span>

@@ -40,14 +40,30 @@
                     </div>
 
                     <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                        <lightning-card title="Contact" icon-name="standard:contact" class="slds-m-bottom_medium">
+                            <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+                                <p class="slds-text-body_small slds-m-bottom_medium">
+                                    Contact card with editable information and related activity accordions.
+                                </p>
+                                <lightning-button
+                                    variant="brand"
+                                    label="View Page"
+                                    onclick={handleContactClick}
+                                    class="slds-m-top_small">
+                                </lightning-button>
+                            </div>
+                        </lightning-card>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
                         <lightning-card title="Accordion Example" icon-name="standard:file" class="slds-m-bottom_medium">
                             <div class="slds-p-horizontal_medium slds-p-bottom_medium">
                                 <p class="slds-text-body_small slds-m-bottom_medium">
                                     An interactive accordion component demonstration with expandable sections.
                                 </p>
-                                <lightning-button 
-                                    variant="brand" 
-                                    label="View Page" 
+                                <lightning-button
+                                    variant="brand"
+                                    label="View Page"
                                     onclick={handleAccordionClick}
                                     class="slds-m-top_small">
                                 </lightning-button>

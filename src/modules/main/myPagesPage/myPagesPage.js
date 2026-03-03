@@ -17,6 +17,14 @@ export default class MyPagesPage extends LightningElement {
         }));
     }
 
+    handleContactClick() {
+        this.dispatchEvent(new CustomEvent('navigate', {
+            detail: { page: 'contact' },
+            bubbles: true,
+            composed: true
+        }));
+    }
+
     handleAccordionClick() {
         this.dispatchEvent(new CustomEvent('navigate', {
             detail: { page: 'accordion' },
