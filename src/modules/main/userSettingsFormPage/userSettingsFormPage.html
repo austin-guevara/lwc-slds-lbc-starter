@@ -56,10 +56,10 @@
                             value={formData.phoneNumber}
                             onchange={handleInputChange}
                             required
-                            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                            pattern="[0-9]{10}"
                             message-when-value-missing="Phone number is required"
-                            message-when-pattern-mismatch="Please enter a valid phone number (format: 123-456-7890)"
-                            placeholder="123-456-7890"
+                            message-when-pattern-mismatch="Please enter a valid 10-digit phone number"
+                            placeholder="1234567890"
                             class="slds-m-bottom_small">
                         </lightning-input>
                     </div>
