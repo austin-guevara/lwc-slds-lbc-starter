@@ -3,7 +3,7 @@ import { LightningElement, track } from 'lwc';
 export default class DockedComposer extends LightningElement {
     value = 'cosmos';
     isDarkModeDisabled = false;
-    @track isUtilityPanelOpen = true;
+    @track isUtilityPanelOpen = false;
     @track isHidden = false;
 
     get options() {
