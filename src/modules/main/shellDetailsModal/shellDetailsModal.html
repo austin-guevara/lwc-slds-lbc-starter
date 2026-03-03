@@ -1,0 +1,67 @@
+<template>
+    <template if:true={isOpen}>
+        <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal Header -->
+                <header class="slds-modal__header">
+                    <lightning-button-icon
+                        icon-name="utility:close"
+                        variant="bare-inverse"
+                        alternative-text="Close"
+                        title="Close"
+                        onclick={handleClose}
+                        class="slds-modal__close">
+                    </lightning-button-icon>
+                    <h2 id="modal-heading" class="slds-modal__title slds-hyphenate">
+                        {shellData.title}
+                    </h2>
+                </header>
+
+                <!-- Modal Body -->
+                <div class="slds-modal__content slds-p-around_medium">
+                    <div class="slds-grid slds-wrap slds-gutters">
+                        <!-- Preview Section -->
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                            <h3 class="slds-text-heading_small slds-m-bottom_small">Preview</h3>
+                            <div class="shell-preview-large slds-box">
+                                <lightning-dynamic-icon type={shellData.iconType} alternative-text="Shell preview"></lightning-dynamic-icon>
+                            </div>
+                        </div>
+
+                        <!-- Details Section -->
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_2-of-3">
+                            <h3 class="slds-text-heading_small slds-m-bottom_small">Description</h3>
+                            <p class="slds-text-body_regular slds-m-bottom_medium">
+                                {shellData.description}
+                            </p>
+
+                            <h3 class="slds-text-heading_small slds-m-bottom_small">Use Cases</h3>
+                            <ul class="slds-list_dotted slds-m-bottom_medium">
+                                <template for:each={shellData.useCases} for:item="useCase">
+                                    <li key={useCase}>{useCase}</li>
+                                </template>
+                            </ul>
+
+                            <h3 class="slds-text-heading_small slds-m-bottom_small">Best Practices</h3>
+                            <ul class="slds-list_dotted">
+                                <template for:each={shellData.bestPractices} for:item="practice">
+                                    <li key={practice}>{practice}</li>
+                                </template>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Footer -->
+                <footer class="slds-modal__footer">
+                    <lightning-button
+                        variant="neutral"
+                        label="Close"
+                        onclick={handleClose}>
+                    </lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

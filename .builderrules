@@ -1,5 +1,12 @@
 # Salesforce UI Guidelines
 
+-- 
+## NEW PAGES AND NAVIGATION
+
+Whenever a new page or component is created always a link to that page in the header nav. 
+
+If user asks to "create a component" or something that doesn't explicitly state to make a new page you should still make a new page that shows that component or whatever thing is asked to be made. (and add a link to it in the top menus)
+
 ---
 
 ## DESIGN SYSTEM CONTEXT

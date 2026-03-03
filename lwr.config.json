@@ -7,8 +7,53 @@
   },
   "routes": [
     {
-      "id": "main",
+      "id": "home",
       "path": "/",
+      "rootComponent": "main/app",
+      "layoutTemplate": "$layoutsDir/index.njk",
+      "bootstrap": {
+        "syntheticShadow": true
+      }
+    },
+    {
+      "id": "customers",
+      "path": "/customers",
+      "rootComponent": "main/app",
+      "layoutTemplate": "$layoutsDir/index.njk",
+      "bootstrap": {
+        "syntheticShadow": true
+      }
+    },
+    {
+      "id": "contact",
+      "path": "/contact",
+      "rootComponent": "main/app",
+      "layoutTemplate": "$layoutsDir/index.njk",
+      "bootstrap": {
+        "syntheticShadow": true
+      }
+    },
+    {
+      "id": "accordion",
+      "path": "/accordion",
+      "rootComponent": "main/app",
+      "layoutTemplate": "$layoutsDir/index.njk",
+      "bootstrap": {
+        "syntheticShadow": true
+      }
+    },
+    {
+      "id": "usersettings",
+      "path": "/usersettings",
+      "rootComponent": "main/app",
+      "layoutTemplate": "$layoutsDir/index.njk",
+      "bootstrap": {
+        "syntheticShadow": true
+      }
+    },
+    {
+      "id": "gallery",
+      "path": "/gallery",
       "rootComponent": "main/app",
       "layoutTemplate": "$layoutsDir/index.njk",
       "bootstrap": {

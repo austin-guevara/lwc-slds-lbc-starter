@@ -1,0 +1,11 @@
+.form-section {
+    min-height: 300px;
+}
+
+.profile-preview {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: var(--slds-g-radius-border-2, 0.25rem);
+    border: 1px solid var(--slds-g-color-border-1, #c9c9c9);
+    object-fit: cover;
+}

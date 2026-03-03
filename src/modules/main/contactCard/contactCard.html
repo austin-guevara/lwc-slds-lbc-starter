@@ -1,0 +1,60 @@
+<template>
+    <lightning-card title="Contact Information" icon-name="standard:contact">
+        <div class="slds-p-around_medium">
+            <div class="slds-form" role="list">
+                <!-- Name -->
+                <div class="slds-form__row">
+                    <div class="slds-form__item" role="listitem">
+                        <div class="slds-form-element slds-form-element_readonly slds-form-element_stacked">
+                            <span class="slds-form-element__label">Name</span>
+                            <div class="slds-form-element__control">
+                                <div class="slds-form-element__static">
+                                    <lightning-icon icon-name="standard:avatar" size="x-small" class="slds-m-right_x-small"></lightning-icon>
+                                    {contactName}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="slds-form__row">
+                    <div class="slds-form__item" role="listitem">
+                        <div class="slds-form-element slds-form-element_readonly slds-form-element_stacked">
+                            <span class="slds-form-element__label">Email</span>
+                            <div class="slds-form-element__control">
+                                <div class="slds-form-element__static">
+                                    <lightning-formatted-email value={contactEmail}></lightning-formatted-email>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phone -->
+                <div class="slds-form__row">
+                    <div class="slds-form__item" role="listitem">
+                        <div class="slds-form-element slds-form-element_readonly slds-form-element_stacked">
+                            <span class="slds-form-element__label">Phone</span>
+                            <div class="slds-form-element__control">
+                                <div class="slds-form-element__static">
+                                    <lightning-formatted-phone value={contactPhone}></lightning-formatted-phone>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slds-m-top_medium">
+                <lightning-button 
+                    variant="brand" 
+                    label="Edit Contact" 
+                    icon-name="utility:edit" 
+                    onclick={handleEditClick}
+                    class="slds-m-right_x-small">
+                </lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

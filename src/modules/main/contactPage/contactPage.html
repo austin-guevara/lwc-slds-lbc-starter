@@ -1,0 +1,53 @@
+<template>
+    <div class="slds-p-around_medium">
+        <div class="slds-page-header">
+            <div class="slds-page-header__row">
+                <div class="slds-page-header__col-title">
+                    <div class="slds-media">
+                        <div class="slds-media__figure">
+                            <lightning-icon icon-name="standard:contact" size="medium"></lightning-icon>
+                        </div>
+                        <div class="slds-media__body">
+                            <div class="slds-page-header__name">
+                                <div class="slds-page-header__name-title">
+                                    <h1>
+                                        <span class="slds-page-header__title slds-truncate" title="Contact Details">Contact Details</span>
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Responsive 2-Column Layout -->
+        <lightning-layout multiple-rows class="slds-m-top_medium">
+            <!-- Left Column: Contact Card -->
+            <lightning-layout-item size="12" medium-device-size="6" large-device-size="5" class="slds-p-bottom_medium">
+                <main-contact-card 
+                    contact-name={contactName}
+                    contact-email={contactEmail}
+                    contact-phone={contactPhone}
+                    oneditcontact={handleEditContact}>
+                </main-contact-card>
+            </lightning-layout-item>
+
+            <!-- Right Column: Accordions -->
+            <lightning-layout-item size="12" medium-device-size="6" large-device-size="7" class="slds-p-bottom_medium">
+                <main-contact-accordions></main-contact-accordions>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+
+    <!-- Edit Modal -->
+    <template if:true={showEditModal}>
+        <main-contact-edit-modal 
+            contact-name={contactName}
+            contact-email={contactEmail}
+            contact-phone={contactPhone}
+            onclose={handleCloseModal}
+            onsave={handleSaveContact}>
+        </main-contact-edit-modal>
+    </template>
+</template>

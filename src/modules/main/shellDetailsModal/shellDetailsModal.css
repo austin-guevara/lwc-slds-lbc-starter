@@ -1,0 +1,8 @@
+.shell-preview-large {
+    background-color: var(--slds-g-color-surface-2, #f3f3f3);
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}

@@ -1,0 +1,36 @@
+<template>
+    <div class="slds-docked_container">
+        <section class={utilityPanelClasses} role="dialog" aria-labelledby="dialog-heading-id-1"
+            aria-describedby="dialog-content-id-1">
+            <header class="slds-docked-composer__header slds-grid slds-shrink-none" aria-live="assertive">
+                <div class="slds-media slds-media_center slds-no-space clickable-header" onclick={handleHeaderClick}>
+                    <div class="slds-media__figure slds-m-right_x-small">
+                        <lightning-icon icon-name="utility:component_customization" variant="container"
+                            size="small"></lightning-icon>
+                    </div>
+                    <div class="slds-media__body">
+                        <span class="slds-assistive-text">Minimized</span>
+                        <h2 class="slds-truncate" id="dialog-heading-id-1" title="SLDS 2 Quick Settings">SLDS 2 Quick
+                            Settings</h2>
+                    </div>
+                </div>
+                <div class="slds-col_bump-left slds-shrink-none slds-m-left_small customize-slds-button">
+                    <lightning-button-icon icon-name="utility:minimize_window" variant="bare" size="small"
+                        label="Minimize" onclick={handleMinimizePanel}></lightning-button-icon>
+                    <lightning-button-icon icon-name="utility:expand_alt" variant="bare" size="small" label="Expand"
+                        class="slds-m-left_xx-small" onclick={handleExpandPanel}></lightning-button-icon>
+                    <lightning-button-icon icon-name="utility:close" variant="bare" size="small" label="Close"
+                        class="slds-m-left_xx-small" onclick={handleClosePanel}></lightning-button-icon>
+                </div>
+            </header>
+            <div class="slds-docked-composer__body slds-p-around_small" id="dialog-content-id-1">
+                <fieldset class="slds-form-element slds-form-element_compound">
+                    <lightning-select name="slds-theme" label="SLDS 2 Theme" value={value} options={options}
+                        onchange={handleChange}></lightning-select>
+                    <lightning-input type="toggle" label="Dark Mode" name="dark-mode" disabled={isDarkModeDisabled}
+                        onchange={handleDarkModeToggle}></lightning-input>
+                </fieldset>
+            </div>
+        </section>
+    </div>
+</template>
