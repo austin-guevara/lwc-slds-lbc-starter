@@ -23,6 +23,10 @@ export default class Canvas extends LightningElement {
         return this.currentPage === 'contact';
     }
 
+    get isUserSettingsPage() {
+        return this.currentPage === 'usersettings';
+    }
+
     handleNavigate(event) {
         const page = event.detail.page;
         this.dispatchEvent(new CustomEvent('navigate', {

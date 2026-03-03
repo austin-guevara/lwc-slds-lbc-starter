@@ -45,6 +45,12 @@
                         <span class="slds-truncate" title="My Pages">My Pages</span>
                     </a>
                 </li>
+                <li class={userSettingsTabClass}>
+                    <a href="#" class="slds-context-bar__label-action" title="User Settings" onclick={handleUserSettingsClick}>
+                        <span class="slds-assistive-text" if:true={isUserSettingsPage}>Current Page:</span>
+                        <span class="slds-truncate" title="User Settings">User Settings</span>
+                    </a>
+                </li>
             </ul>
         </nav>
     </div>

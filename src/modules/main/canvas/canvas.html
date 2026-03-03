@@ -18,4 +18,8 @@
     <template if:true={isMyPagesPage}>
         <main-my-pages-page onnavigate={handleNavigate}></main-my-pages-page>
     </template>
+
+    <template if:true={isUserSettingsPage}>
+        <main-user-settings-form-page onnavigate={handleNavigate}></main-user-settings-form-page>
+    </template>
 </template>

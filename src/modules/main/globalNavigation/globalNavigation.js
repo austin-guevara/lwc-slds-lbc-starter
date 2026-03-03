@@ -23,6 +23,10 @@ export default class GlobalNavigation extends LightningElement {
         return this.currentPage === 'contact';
     }
 
+    get isUserSettingsPage() {
+        return this.currentPage === 'usersettings';
+    }
+
     get homeTabClass() {
         return `slds-context-bar__item ${this.isHomePage ? 'slds-is-active' : ''}`;
     }
@@ -41,6 +45,10 @@ export default class GlobalNavigation extends LightningElement {
 
     get contactTabClass() {
         return `slds-context-bar__item ${this.isContactPage ? 'slds-is-active' : ''}`;
+    }
+
+    get userSettingsTabClass() {
+        return `slds-context-bar__item ${this.isUserSettingsPage ? 'slds-is-active' : ''}`;
     }
 
     handleHomeClick(event) {
@@ -83,6 +91,15 @@ export default class GlobalNavigation extends LightningElement {
         event.preventDefault();
         this.dispatchEvent(new CustomEvent('navigate', {
             detail: { page: 'mypages' },
+            bubbles: true,
+            composed: true
+        }));
+    }
+
+    handleUserSettingsClick(event) {
+        event.preventDefault();
+        this.dispatchEvent(new CustomEvent('navigate', {
+            detail: { page: 'usersettings' },
             bubbles: true,
             composed: true
         }));

@@ -1,0 +1,179 @@
+<template>
+    <div class="slds-p-around_large">
+        <lightning-card title="User Settings Form" icon-name="standard:user">
+            <div class="slds-p-around_medium">
+                <!-- Progress Indicator -->
+                <lightning-progress-indicator 
+                    current-step={currentStepValue} 
+                    type="base" 
+                    variant="base"
+                    class="slds-m-bottom_large">
+                    <lightning-progress-step 
+                        label="Personal Information" 
+                        value="step1">
+                    </lightning-progress-step>
+                    <lightning-progress-step 
+                        label="Additional Details" 
+                        value="step2">
+                    </lightning-progress-step>
+                    <lightning-progress-step 
+                        label="Preferences" 
+                        value="step3">
+                    </lightning-progress-step>
+                </lightning-progress-indicator>
+
+                <!-- Step 1: Personal Information -->
+                <template if:true={isStep1}>
+                    <div class="form-section">
+                        <h2 class="slds-text-heading_medium slds-m-bottom_medium">Personal Information</h2>
+                        
+                        <lightning-input
+                            label="Full Name"
+                            name="fullName"
+                            value={formData.fullName}
+                            onchange={handleInputChange}
+                            required
+                            message-when-value-missing="Full name is required"
+                            class="slds-m-bottom_small">
+                        </lightning-input>
+
+                        <lightning-input
+                            type="email"
+                            label="Email"
+                            name="email"
+                            value={formData.email}
+                            onchange={handleInputChange}
+                            required
+                            message-when-value-missing="Email is required"
+                            message-when-type-mismatch="Please enter a valid email address"
+                            class="slds-m-bottom_small">
+                        </lightning-input>
+
+                        <lightning-input
+                            type="tel"
+                            label="Phone Number"
+                            name="phoneNumber"
+                            value={formData.phoneNumber}
+                            onchange={handleInputChange}
+                            required
+                            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                            message-when-value-missing="Phone number is required"
+                            message-when-pattern-mismatch="Please enter a valid phone number (format: 123-456-7890)"
+                            placeholder="123-456-7890"
+                            class="slds-m-bottom_small">
+                        </lightning-input>
+                    </div>
+                </template>
+
+                <!-- Step 2: Additional Details -->
+                <template if:true={isStep2}>
+                    <div class="form-section">
+                        <h2 class="slds-text-heading_medium slds-m-bottom_medium">Additional Details</h2>
+                        
+                        <lightning-input
+                            type="number"
+                            label="Age"
+                            name="age"
+                            value={formData.age}
+                            onchange={handleInputChange}
+                            required
+                            min="18"
+                            max="120"
+                            message-when-value-missing="Age is required"
+                            message-when-range-underflow="You must be at least 18 years old"
+                            message-when-range-overflow="Please enter a valid age"
+                            class="slds-m-bottom_small">
+                        </lightning-input>
+
+                        <lightning-input
+                            type="date"
+                            label="Birthday"
+                            name="birthday"
+                            value={formData.birthday}
+                            onchange={handleInputChange}
+                            required
+                            max={maxDate}
+                            message-when-value-missing="Birthday is required"
+                            message-when-range-overflow="Birthday cannot be in the future"
+                            class="slds-m-bottom_small">
+                        </lightning-input>
+
+                        <lightning-combobox
+                            name="country"
+                            label="Country"
+                            value={formData.country}
+                            placeholder="Select a country"
+                            options={countryOptions}
+                            onchange={handleInputChange}
+                            required
+                            message-when-value-missing="Please select a country"
+                            class="slds-m-bottom_small">
+                        </lightning-combobox>
+                    </div>
+                </template>
+
+                <!-- Step 3: Preferences -->
+                <template if:true={isStep3}>
+                    <div class="form-section">
+                        <h2 class="slds-text-heading_medium slds-m-bottom_medium">Preferences</h2>
+                        
+                        <lightning-input
+                            type="file"
+                            label="Profile Picture"
+                            name="profilePicture"
+                            accept="image/png, image/jpeg, image/jpg"
+                            onchange={handleFileChange}
+                            class="slds-m-bottom_medium">
+                        </lightning-input>
+
+                        <template if:true={profilePicturePreview}>
+                            <div class="slds-m-bottom_medium">
+                                <img src={profilePicturePreview} alt="Profile Preview" class="profile-preview" />
+                            </div>
+                        </template>
+
+                        <lightning-checkbox-group
+                            label="Notification Preferences"
+                            name="notifications"
+                            options={checkboxOptions}
+                            value={formData.notifications}
+                            onchange={handleCheckboxChange}
+                            required
+                            message-when-value-missing="Please select at least one notification preference"
+                            class="slds-m-bottom_small">
+                        </lightning-checkbox-group>
+                    </div>
+                </template>
+
+                <!-- Navigation Buttons -->
+                <div class="slds-m-top_large slds-grid slds-grid_align-spread">
+                    <div>
+                        <lightning-button
+                            label="Previous"
+                            onclick={handlePrevious}
+                            disabled={isFirstStep}
+                            variant="neutral">
+                        </lightning-button>
+                    </div>
+                    <div>
+                        <lightning-button
+                            label={nextButtonLabel}
+                            onclick={handleNext}
+                            variant="brand">
+                        </lightning-button>
+                    </div>
+                </div>
+
+                <!-- Success Message -->
+                <template if:true={showSuccess}>
+                    <div class="slds-m-top_large">
+                        <div class="slds-box slds-theme_success slds-text-align_center">
+                            <lightning-icon icon-name="utility:success" size="small" alternative-text="Success" class="slds-m-right_small"></lightning-icon>
+                            <span class="slds-text-heading_small">Form submitted successfully!</span>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </lightning-card>
+    </div>
+</template>
