@@ -16,17 +16,23 @@
   },
   "dependencies": {
     "@salesforce-ux/design-system": "^2.26.2",
-    "lightning-base-components": "^1.28.13-alpha",
-    "lwc": "8.20.1",
-    "lwr": "0.18.1"
+    "lightning-base-components": "1.28.11-alpha",
+    "lwc": "8.23.0",
+    "lwr": "0.21.6"
   },
   "overrides": {
-    "@lwc/compiler": "8.20.1",
-    "@lwc/babel-plugin-component": "8.20.1"
+    "lwc": "8.23.0",
+    "@lwc/compiler": "8.23.0",
+    "@lwc/babel-plugin-component": "8.23.0",
+    "@lwc/engine-dom": "8.23.0",
+    "@lwc/synthetic-shadow": "8.23.0"
   },
   "resolutions": {
-    "@lwc/compiler": "8.20.1",
-    "@lwc/babel-plugin-component": "8.20.1"
+    "lwc": "8.23.0",
+    "@lwc/compiler": "8.23.0",
+    "@lwc/babel-plugin-component": "8.23.0",
+    "@lwc/engine-dom": "8.23.0",
+    "@lwc/synthetic-shadow": "8.23.0"
   },
   "engines": {
     "node": ">=18.0.0"
