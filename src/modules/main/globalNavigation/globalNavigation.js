@@ -15,6 +15,10 @@ export default class GlobalNavigation extends LightningElement {
         return this.currentPage === 'customers';
     }
 
+    get isMyPagesPage() {
+        return this.currentPage === 'mypages';
+    }
+
     get homeTabClass() {
         return `slds-context-bar__item ${this.isHomePage ? 'slds-is-active' : ''}`;
     }
@@ -25,6 +29,10 @@ export default class GlobalNavigation extends LightningElement {
 
     get customersTabClass() {
         return `slds-context-bar__item ${this.isCustomersPage ? 'slds-is-active' : ''}`;
+    }
+
+    get myPagesTabClass() {
+        return `slds-context-bar__item ${this.isMyPagesPage ? 'slds-is-active' : ''}`;
     }
 
     handleHomeClick(event) {
@@ -49,6 +57,15 @@ export default class GlobalNavigation extends LightningElement {
         event.preventDefault();
         this.dispatchEvent(new CustomEvent('navigate', {
             detail: { page: 'accordion' },
+            bubbles: true,
+            composed: true
+        }));
+    }
+
+    handleMyPagesClick(event) {
+        event.preventDefault();
+        this.dispatchEvent(new CustomEvent('navigate', {
+            detail: { page: 'mypages' },
             bubbles: true,
             composed: true
         }));

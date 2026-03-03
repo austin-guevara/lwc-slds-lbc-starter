@@ -10,4 +10,8 @@
     <template if:true={isCustomersPage}>
         <main-customers-table-page onnavigate={handleNavigate}></main-customers-table-page>
     </template>
+
+    <template if:true={isMyPagesPage}>
+        <main-my-pages-page onnavigate={handleNavigate}></main-my-pages-page>
+    </template>
 </template>
