@@ -52,6 +52,13 @@ export default class DockedComposer extends LightningElement {
         }
     }
 
+    handleHeaderClick() {
+        // Only open the panel when it's closed
+        if (!this.isUtilityPanelOpen) {
+            this.isUtilityPanelOpen = true;
+        }
+    }
+
     handleMinimizePanel() {
         this.isUtilityPanelOpen = !this.isUtilityPanelOpen;
     }

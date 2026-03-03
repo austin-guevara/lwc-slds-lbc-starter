@@ -1,0 +1,15 @@
+.clickable-header {
+    cursor: pointer;
+}
+
+.clickable-header:hover {
+    background-color: var(--slds-g-color-surface-container-2, #f3f3f3);
+}
+
+.slds-is-open .clickable-header {
+    cursor: default;
+}
+
+.slds-is-open .clickable-header:hover {
+    background-color: transparent;
+}
