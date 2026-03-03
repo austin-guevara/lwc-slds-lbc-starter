@@ -1,6 +1,20 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, track } from 'lwc';
 
 export default class HomePage extends LightningElement {
+    @track showMoreShells = false;
+
+    get showMoreLabel() {
+        return this.showMoreShells ? 'Show Less' : 'Show More';
+    }
+
+    get showMoreIcon() {
+        return this.showMoreShells ? 'utility:chevronup' : 'utility:chevrondown';
+    }
+
+    handleToggleShells() {
+        this.showMoreShells = !this.showMoreShells;
+    }
+
     handleCustomersClick() {
         this.dispatchEvent(new CustomEvent('navigate', {
             detail: { page: 'customers' },
