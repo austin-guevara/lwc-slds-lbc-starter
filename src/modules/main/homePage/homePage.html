@@ -1,12 +1,72 @@
 <template>
     <div class="slds-p-around_large">
-        <lightning-card class="slds-m-bottom_medium">
+        <!-- Welcome Section -->
+        <lightning-card class="slds-m-bottom_large">
             <div class="slds-p-around_large slds-text-align_center">
-                <img src="/public/assets/recipes-logo.png" alt="Recipes Logo" class="slds-m-bottom_medium" />
+                <img src="/public/assets/recipes-logo.png" alt="Recipes Logo" class="welcome-logo slds-m-bottom_medium" />
                 <h1 class="slds-text-heading_large">Welcome to the Salesforce UI Starter Kit</h1>
                 <p class="slds-text-body_regular slds-m-top_medium">
                     A comprehensive starter kit for building Salesforce Lightning Web Components with SLDS.
                 </p>
+            </div>
+        </lightning-card>
+
+        <!-- My Pages Section -->
+        <lightning-card title="My Pages" icon-name="standard:apps" class="slds-m-bottom_large">
+            <div class="slds-p-horizontal_medium">
+                <p class="slds-text-body_regular slds-m-bottom_large">
+                    Browse all the example pages built in this application.
+                </p>
+
+                <div class="slds-grid slds-wrap slds-gutters">
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                        <lightning-card title="Customers" icon-name="standard:account" class="slds-m-bottom_medium">
+                            <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+                                <p class="slds-text-body_small slds-m-bottom_medium">
+                                    A data table displaying customer information with sorting and actions.
+                                </p>
+                                <lightning-button
+                                    variant="brand"
+                                    label="View Page"
+                                    onclick={handleCustomersClick}
+                                    class="slds-m-top_small">
+                                </lightning-button>
+                            </div>
+                        </lightning-card>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                        <lightning-card title="Contact" icon-name="standard:contact" class="slds-m-bottom_medium">
+                            <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+                                <p class="slds-text-body_small slds-m-bottom_medium">
+                                    Contact card with editable information and related activity accordions.
+                                </p>
+                                <lightning-button
+                                    variant="brand"
+                                    label="View Page"
+                                    onclick={handleContactClick}
+                                    class="slds-m-top_small">
+                                </lightning-button>
+                            </div>
+                        </lightning-card>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                        <lightning-card title="Accordion Example" icon-name="standard:file" class="slds-m-bottom_medium">
+                            <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+                                <p class="slds-text-body_small slds-m-bottom_medium">
+                                    An interactive accordion component demonstration with expandable sections.
+                                </p>
+                                <lightning-button
+                                    variant="brand"
+                                    label="View Page"
+                                    onclick={handleAccordionClick}
+                                    class="slds-m-top_small">
+                                </lightning-button>
+                            </div>
+                        </lightning-card>
+                    </div>
+                </div>
             </div>
         </lightning-card>
 

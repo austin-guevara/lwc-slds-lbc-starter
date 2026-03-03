@@ -1,1 +1,5 @@
-/* Home page styles */
+.welcome-logo {
+    max-width: 200px;
+    width: 50%;
+    height: auto;
+}
