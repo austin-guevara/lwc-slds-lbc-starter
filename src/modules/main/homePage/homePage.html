@@ -250,85 +250,108 @@
         </lightning-card>
 
         <lightning-card title="Example Pages" icon-name="standard:apps" class="slds-m-bottom_large">
-            <div class="slds-p-around_small">
-                <p class="slds-text-body_regular slds-m-bottom_medium">
+            <div class="slds-p-around_medium">
+                <p class="slds-text-body_regular slds-m-bottom_large">
                     Explore these example pages to see various Lightning Design System components in action:
                 </p>
 
-                <div class="slds-grid slds-wrap slds-gutters_small">
-                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4">
-                        <lightning-card title="Customers" icon-name="standard:account" class="slds-m-bottom_small">
-                            <div class="slds-p-around_small">
-                                <p class="slds-text-body_small slds-m-bottom_x-small">
-                                    A data table displaying customer information with sorting and actions.
-                                </p>
-                                <lightning-button
-                                    variant="brand"
-                                    label="View Page"
-                                    onclick={handleCustomersClick}>
-                                </lightning-button>
-                            </div>
-                        </lightning-card>
+                <!-- Customers Table -->
+                <div class="slds-m-bottom_large">
+                    <div class="slds-m-bottom_small">
+                        <a href="/customers" onclick={handleNavigateToCustomers} class="slds-text-link">
+                            <h3 class="slds-text-heading_medium">Customers Table</h3>
+                        </a>
                     </div>
-
-                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4">
-                        <lightning-card title="Contact" icon-name="standard:contact" class="slds-m-bottom_small">
-                            <div class="slds-p-around_small">
-                                <p class="slds-text-body_small slds-m-bottom_x-small">
-                                    Contact card with editable information and related activity accordions.
-                                </p>
-                                <lightning-button
-                                    variant="brand"
-                                    label="View Page"
-                                    onclick={handleContactClick}>
-                                </lightning-button>
-                            </div>
-                        </lightning-card>
+                    <p class="slds-text-body_regular slds-m-bottom_small">
+                        Interactive data table with sorting, filtering, and detail view. Shows customer information with actions and master-detail layout.
+                    </p>
+                    <div class="slds-box slds-box_x-small slds-theme_shade">
+                        <p class="slds-text-body_small slds-text-color_weak">
+                            <strong>Example prompt:</strong>
+                        </p>
+                        <p class="slds-text-body_small slds-m-top_x-small">
+                            "Make another page called Customers Table that has a table of customers and above the table it has a card that shows the customer information. So that when a user clicks a row in the table it shows the details above. Add all the usual filters and sorting, and actions to the table"
+                        </p>
                     </div>
+                </div>
 
-                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4">
-                        <lightning-card title="Accordion Example" icon-name="standard:file" class="slds-m-bottom_small">
-                            <div class="slds-p-around_small">
-                                <p class="slds-text-body_small slds-m-bottom_x-small">
-                                    An interactive accordion component demonstration with expandable sections.
-                                </p>
-                                <lightning-button
-                                    variant="brand"
-                                    label="View Page"
-                                    onclick={handleAccordionClick}>
-                                </lightning-button>
-                            </div>
-                        </lightning-card>
+                <!-- Contact Page -->
+                <div class="slds-m-bottom_large">
+                    <div class="slds-m-bottom_small">
+                        <a href="/contact" onclick={handleNavigateToAccordion} class="slds-text-link">
+                            <h3 class="slds-text-heading_medium">Contact</h3>
+                        </a>
                     </div>
-
-                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4">
-                        <lightning-card title="User Settings Form" icon-name="standard:user" class="slds-m-bottom_small">
-                            <div class="slds-p-around_small">
-                                <p class="slds-text-body_small slds-m-bottom_x-small">
-                                    Multi-step form with validation for user settings including personal info, details, and preferences.
-                                </p>
-                                <lightning-button
-                                    variant="brand"
-                                    label="View Page"
-                                    onclick={handleUserSettingsClick}>
-                                </lightning-button>
-                            </div>
-                        </lightning-card>
+                    <p class="slds-text-body_regular slds-m-bottom_small">
+                        Contact card with editable information and related activity accordions. Features inline editing, activity timeline, and expandable sections.
+                    </p>
+                    <div class="slds-box slds-box_x-small slds-theme_shade">
+                        <p class="slds-text-body_small slds-text-color_weak">
+                            <strong>Example prompt:</strong>
+                        </p>
+                        <p class="slds-text-body_small slds-m-top_x-small">
+                            "Create a contact page with a card showing contact details that can be edited inline. Below the contact card, show related activities in an accordion layout with expandable sections for emails, calls, and meetings"
+                        </p>
                     </div>
+                </div>
 
-                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4">
-                        <lightning-card title="UI Shell Gallery" icon-name="standard:canvas" class="slds-m-bottom_small">
-                            <div class="slds-p-around_small">
-                                <p class="slds-text-body_small slds-m-bottom_x-small">
-                                    Explore available UI Shell patterns and layouts with visual examples and descriptions.
-                                </p>
-                                <lightning-button
-                                    variant="brand"
-                                    label="View Page"
-                                    onclick={handleGalleryClick}>
-                                </lightning-button>
-                            </div>
-                        </lightning-card>
+                <!-- Accordion Example -->
+                <div class="slds-m-bottom_large">
+                    <div class="slds-m-bottom_small">
+                        <a href="/accordion" onclick={handleNavigateToAccordion} class="slds-text-link">
+                            <h3 class="slds-text-heading_medium">Accordion Example</h3>
+                        </a>
+                    </div>
+                    <p class="slds-text-body_regular slds-m-bottom_small">
+                        Interactive accordion component demonstration with expandable sections. Shows how to organize related content into collapsible panels.
+                    </p>
+                    <div class="slds-box slds-box_x-small slds-theme_shade">
+                        <p class="slds-text-body_small slds-text-color_weak">
+                            <strong>Example prompt:</strong>
+                        </p>
+                        <p class="slds-text-body_small slds-m-top_x-small">
+                            "Build an accordion example page that demonstrates expandable and collapsible sections. Include multiple accordion items with different content types like text, lists, and nested content"
+                        </p>
+                    </div>
+                </div>
+
+                <!-- User Settings Form -->
+                <div class="slds-m-bottom_large">
+                    <div class="slds-m-bottom_small">
+                        <a href="/usersettings" onclick={handleNavigateToUserSettings} class="slds-text-link">
+                            <h3 class="slds-text-heading_medium">User Settings Form</h3>
+                        </a>
+                    </div>
+                    <p class="slds-text-body_regular slds-m-bottom_small">
+                        Multi-step form with comprehensive validation and progress tracking. Includes personal information, additional details, and preferences with smart phone number formatting.
+                    </p>
+                    <div class="slds-box slds-box_x-small slds-theme_shade">
+                        <p class="slds-text-body_small slds-text-color_weak">
+                            <strong>Example prompt:</strong>
+                        </p>
+                        <p class="slds-text-body_small slds-m-top_x-small">
+                            "Create a form with inputs for user settings - full name, email, phone number, age, birthday, country picklist, profile picture, and some checkboxes. Add validation to this form so that invalid values show an error on the input. Add a 'Next' button, and a progress indicator under the form that progresses to the next step and shows new inputs when 'Next' is clicked"
+                        </p>
+                    </div>
+                </div>
+
+                <!-- UI Shell Gallery -->
+                <div class="slds-m-bottom_medium">
+                    <div class="slds-m-bottom_small">
+                        <a href="/gallery" onclick={handleNavigateToGallery} class="slds-text-link">
+                            <h3 class="slds-text-heading_medium">UI Shell Gallery</h3>
+                        </a>
+                    </div>
+                    <p class="slds-text-body_regular slds-m-bottom_small">
+                        Explore available UI Shell patterns and layouts with visual examples and descriptions. Interactive showcase of 9 different layout patterns with detailed explanations and use cases.
+                    </p>
+                    <div class="slds-box slds-box_x-small slds-theme_shade">
+                        <p class="slds-text-body_small slds-text-color_weak">
+                            <strong>Example prompt:</strong>
+                        </p>
+                        <p class="slds-text-body_small slds-m-top_x-small">
+                            "Make a Gallery page that shows each UI Shell that is available and describes what it can do. Include visual previews of each layout pattern with descriptions and use cases"
+                        </p>
                     </div>
                 </div>
             </div>
