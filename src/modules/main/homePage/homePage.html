@@ -134,12 +134,13 @@
                     </div>
                 </div>
 
-                <!-- Layout Patterns -->
-                <h3 class="slds-text-heading_small slds-m-bottom_x-small slds-m-top_small">Layout Patterns</h3>
-                <p class="slds-text-body_small slds-m-bottom_small slds-text-color_weak">
-                    Common layout patterns for organizing content within the canvas area.
-                </p>
-                <div class="slds-grid slds-wrap slds-gutters_small">
+                <!-- Layout Patterns - shown when expanded -->
+                <template if:true={showMoreShells}>
+                    <h3 class="slds-text-heading_small slds-m-bottom_x-small slds-m-top_small">Layout Patterns</h3>
+                    <p class="slds-text-body_small slds-m-bottom_small slds-text-color_weak">
+                        Common layout patterns for organizing content within the canvas area.
+                    </p>
+                    <div class="slds-grid slds-wrap slds-gutters_small">
                     <!-- Standard Page Layout -->
                     <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
                         <lightning-card title="Standard Page Layout" icon-name="utility:page" class="slds-m-bottom_small shell-card">
@@ -208,8 +209,6 @@
                         </lightning-card>
                     </div>
 
-                    <!-- Additional shells shown when expanded -->
-                    <template if:true={showMoreShells}>
                         <!-- Card Grid Layout -->
                         <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
                             <lightning-card title="Card Grid Layout" icon-name="utility:apps" class="slds-m-bottom_small shell-card">
@@ -351,8 +350,8 @@
                                 </div>
                             </lightning-card>
                         </div>
-                    </template>
-                </div>
+                    </div>
+                </template>
 
                 <!-- Show More / Show Less Button -->
                 <div class="slds-text-align_center slds-m-top_medium">
