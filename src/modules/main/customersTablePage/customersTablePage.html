@@ -1,0 +1,180 @@
+<template>
+    <div class="slds-p-around_large">
+        <div class="slds-m-bottom_medium">
+            <lightning-button 
+                label="Back to Home" 
+                icon-name="utility:back" 
+                onclick={handleNavigateHome}>
+            </lightning-button>
+        </div>
+
+        <h1 class="slds-text-heading_large slds-m-bottom_medium">Customers</h1>
+
+        <!-- Master-Detail Layout -->
+        <div class="slds-grid slds-gutters">
+            <!-- Master Panel - Customer List (Left) -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-large-size_1-of-4">
+                <lightning-card title="Customer List" icon-name="standard:account">
+                    <!-- Search -->
+                    <div class="slds-p-horizontal_small slds-p-top_small">
+                        <lightning-input 
+                            type="search" 
+                            label="Search Customers"
+                            variant="label-hidden"
+                            placeholder="Search customers..." 
+                            onchange={handleSearch}>
+                        </lightning-input>
+                    </div>
+
+                    <!-- Customer List -->
+                    <div class="customer-list slds-scrollable_y">
+                        <ul class="slds-has-dividers_bottom-space">
+                            <template for:each={customers} for:item="customer">
+                                <li key={customer.id} class="slds-item">
+                                    <article class={customer.itemClass} onclick={handleCustomerClick} data-id={customer.id}>
+                                        <div class="slds-media slds-media_center slds-p-around_small">
+                                            <div class="slds-media__figure">
+                                                <lightning-icon icon-name="standard:account" size="small"></lightning-icon>
+                                            </div>
+                                            <div class="slds-media__body">
+                                                <div class="slds-text-body_regular slds-truncate" title={customer.name}>
+                                                    {customer.name}
+                                                </div>
+                                                <div class="slds-text-body_small slds-text-color_weak slds-truncate">
+                                                    {customer.industry}
+                                                </div>
+                                            </div>
+                                            <div class="slds-media__figure slds-media__figure_reverse">
+                                                <lightning-badge label={customer.status} class={customer.badgeClass}></lightning-badge>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </li>
+                            </template>
+                        </ul>
+
+                        <!-- Empty State -->
+                        <template if:false={hasCustomers}>
+                            <div class="slds-text-align_center slds-p-around_medium">
+                                <p class="slds-text-body_small slds-text-color_weak">No customers found</p>
+                            </div>
+                        </template>
+                    </div>
+                </lightning-card>
+            </div>
+
+            <!-- Detail Panel - Customer Details (Right) -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_2-of-3 slds-large-size_3-of-4">
+                <template if:true={selectedCustomer}>
+                    <lightning-card icon-name="standard:account">
+                        <div slot="title">
+                            <div class="slds-media slds-media_center">
+                                <div class="slds-media__body">
+                                    <h2 class="slds-card__header-title">{selectedCustomer.name}</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div slot="actions">
+                            <lightning-button-group>
+                                <lightning-button label="Edit" icon-name="utility:edit"></lightning-button>
+                                <lightning-button label="Delete" icon-name="utility:delete"></lightning-button>
+                            </lightning-button-group>
+                        </div>
+
+                        <div class="slds-p-around_medium">
+                            <!-- Customer Information Section -->
+                            <div class="slds-m-bottom_large">
+                                <h3 class="slds-text-heading_small slds-m-bottom_medium">Customer Information</h3>
+                                <div class="slds-grid slds-wrap slds-gutters">
+                                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                                        <div class="slds-form-element slds-m-bottom_medium">
+                                            <label class="slds-form-element__label slds-text-color_weak">Customer Name</label>
+                                            <div class="slds-form-element__control">
+                                                <div class="slds-text-body_regular">{selectedCustomer.name}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                                        <div class="slds-form-element slds-m-bottom_medium">
+                                            <label class="slds-form-element__label slds-text-color_weak">Industry</label>
+                                            <div class="slds-form-element__control">
+                                                <div class="slds-text-body_regular">{selectedCustomer.industry}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                                        <div class="slds-form-element slds-m-bottom_medium">
+                                            <label class="slds-form-element__label slds-text-color_weak">Status</label>
+                                            <div class="slds-form-element__control">
+                                                <lightning-badge label={selectedCustomer.status} class={selectedCustomer.badgeClass}></lightning-badge>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Contact Information Section -->
+                            <div class="slds-m-bottom_large">
+                                <h3 class="slds-text-heading_small slds-m-bottom_medium">Contact Information</h3>
+                                <div class="slds-grid slds-wrap slds-gutters">
+                                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                                        <div class="slds-form-element slds-m-bottom_medium">
+                                            <label class="slds-form-element__label slds-text-color_weak">Email</label>
+                                            <div class="slds-form-element__control">
+                                                <lightning-formatted-email value={selectedCustomer.email}></lightning-formatted-email>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                                        <div class="slds-form-element slds-m-bottom_medium">
+                                            <label class="slds-form-element__label slds-text-color_weak">Phone</label>
+                                            <div class="slds-form-element__control">
+                                                <lightning-formatted-phone value={selectedCustomer.phone}></lightning-formatted-phone>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Business Information Section -->
+                            <div>
+                                <h3 class="slds-text-heading_small slds-m-bottom_medium">Business Information</h3>
+                                <div class="slds-grid slds-wrap slds-gutters">
+                                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                                        <div class="slds-form-element slds-m-bottom_medium">
+                                            <label class="slds-form-element__label slds-text-color_weak">Annual Revenue</label>
+                                            <div class="slds-form-element__control">
+                                                <div class="slds-text-heading_small">{selectedCustomerRevenue}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                                        <div class="slds-form-element slds-m-bottom_medium">
+                                            <label class="slds-form-element__label slds-text-color_weak">Employees</label>
+                                            <div class="slds-form-element__control">
+                                                <div class="slds-text-heading_small">{selectedCustomer.employees}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </lightning-card>
+                </template>
+
+                <!-- Empty State - No Customer Selected -->
+                <template if:false={selectedCustomer}>
+                    <lightning-card>
+                        <div class="slds-p-around_x-large slds-text-align_center">
+                            <lightning-icon icon-name="standard:account" size="large" class="slds-m-bottom_medium"></lightning-icon>
+                            <h3 class="slds-text-heading_small slds-m-bottom_small">No Customer Selected</h3>
+                            <p class="slds-text-body_regular slds-text-color_weak">
+                                Select a customer from the list to view their details
+                            </p>
+                        </div>
+                    </lightning-card>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

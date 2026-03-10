@@ -1,8 +1,19 @@
 <template>
-  <main>
-    <img src="/public/assets/recipes-logo.png" alt="logo" />
-    <h1>Hello World!</h1>
-
-    <main-accordion-group></main-accordion-group>
+  <header class="slds-global-header_container slds-is-relative">
+    <a href="#" class="slds-assistive-text slds-assistive-text_focus">Skip to Navigation</a>
+    <a href="#" class="slds-assistive-text slds-assistive-text_focus">Skip to Main Content</a>
+    <main-global-header onpanelselect={handlePanelSelect}></main-global-header>
+    <main-global-navigation current-page={currentPage} onnavigate={handleNavigate}></main-global-navigation>
+  </header>
+  <main class="utility-full-height">
+    <lightning-layout vertical-align="stretch" class="utility-full-height">
+      <lightning-layout-item flexibility="auto">
+        <main-canvas current-page={currentPage} onnavigate={handleNavigate}></main-canvas>
+      </lightning-layout-item>
+      <lightning-layout-item class={panelClasses}>
+        <main-panel selected-panel={selectedPanel} onpanelclose={handlePanelClose}></main-panel>
+      </lightning-layout-item>
+    </lightning-layout>
   </main>
+  <main-docked-composer></main-docked-composer>
 </template>

@@ -1,0 +1,40 @@
+/* Master-Detail Layout Styles */
+
+.customer-list {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.customer-item {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.customer-item:hover {
+    background-color: var(--slds-g-color-surface-container-2, #f3f3f3);
+}
+
+.slds-is-selected {
+    background-color: var(--slds-g-color-accent-container-1, #066afe);
+    color: var(--slds-g-color-on-accent-1, #ffffff);
+}
+
+.slds-is-selected:hover {
+    background-color: var(--slds-g-color-accent-container-2, #0250d9);
+}
+
+.slds-is-selected .slds-text-color_weak {
+    color: var(--slds-g-color-on-accent-2, #a8cbff);
+}
+
+/* Override icon color in selected state */
+.slds-is-selected lightning-icon {
+    --slds-c-icon-color-foreground: var(--slds-g-color-on-accent-1, #ffffff);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .customer-list {
+        max-height: 300px;
+    }
+}

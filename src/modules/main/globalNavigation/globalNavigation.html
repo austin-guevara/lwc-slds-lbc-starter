@@ -1,0 +1,33 @@
+<template>
+    <div class="slds-context-bar">
+        <div class="slds-context-bar__primary">
+            <div
+                class="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger_click slds-no-hover">
+                <div class="slds-context-bar__icon-action slds-p-left_none">
+                    <lightning-button-menu icon-name="utility:apps" title="Open Menu" variant="bare" icon-size="medium">
+                        <lightning-menu-item label="Salesforce UI Starter Kit" value="home" onselect={handleMenuNavigate}></lightning-menu-item>
+                    </lightning-button-menu>
+                </div>
+                <span class="slds-context-bar__label-action slds-context-bar__app-name">
+                    <span class="slds-truncate" title="Salesforce UI Starter Kit">Salesforce UI Starter Kit</span>
+                </span>
+            </div>
+        </div>
+        <nav class="slds-context-bar__secondary" role="navigation">
+            <ul class="slds-grid slds-container_fluid">
+                <li class={homeTabClass}>
+                    <a href="/" class="slds-context-bar__label-action" title="Home" onclick={handleHomeClick}>
+                        <span class="slds-assistive-text" if:true={isHomePage}>Current Page:</span>
+                        <span class="slds-truncate" title="Home">Home</span>
+                    </a>
+                </li>
+                <li class={galleryTabClass}>
+                    <a href="/gallery" class="slds-context-bar__label-action" title="UI Shell Gallery" onclick={handleGalleryClick}>
+                        <span class="slds-assistive-text" if:true={isGalleryPage}>Current Page:</span>
+                        <span class="slds-truncate" title="UI Shell Gallery">UI Shell Gallery</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</template>

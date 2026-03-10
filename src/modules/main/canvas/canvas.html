@@ -1,0 +1,29 @@
+<template>
+    <template if:true={isHomePage}>
+        <main-home-page onnavigate={handleNavigate}></main-home-page>
+    </template>
+
+    <template if:true={isAccordionPage}>
+        <main-accordion-example-page onnavigate={handleNavigate}></main-accordion-example-page>
+    </template>
+
+    <template if:true={isCustomersPage}>
+        <main-customers-table-page onnavigate={handleNavigate}></main-customers-table-page>
+    </template>
+
+    <template if:true={isContactPage}>
+        <main-contact-page onnavigate={handleNavigate}></main-contact-page>
+    </template>
+
+    <template if:true={isMyPagesPage}>
+        <main-my-pages-page onnavigate={handleNavigate}></main-my-pages-page>
+    </template>
+
+    <template if:true={isUserSettingsPage}>
+        <main-user-settings-form-page onnavigate={handleNavigate}></main-user-settings-form-page>
+    </template>
+
+    <template if:true={isGalleryPage}>
+        <main-gallery-page onnavigate={handleNavigate}></main-gallery-page>
+    </template>
+</template>
